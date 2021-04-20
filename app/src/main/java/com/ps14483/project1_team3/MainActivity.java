@@ -2,6 +2,7 @@ package com.ps14483.project1_team3;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -41,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
     public String username, password, name;
     FragmentTransaction ft;
     ActionBarDrawerToggle bdtoggle;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("ResourceAsColor")
     public void onclickPet(View view) {
         toolbar.setTitle("Thú Cưng");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.show();
         fragmentManager.beginTransaction().replace(R.id.frame_layout, new PetFragment()).commit();
         Toast.makeText(getApplicationContext(), "alo", Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);
@@ -112,7 +114,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onclickptaikhoan(View view) {
-        toolbar.setTitle("");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         fragmentManager.beginTransaction().replace(R.id.frame_layout, new TaiKhoanFragment()).commit();
         Toast.makeText(getApplicationContext(), "alo", Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);
@@ -121,6 +124,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onclickSp(View view) {
         toolbar.setTitle("Sản Phẩm");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.show();
         fragmentManager.beginTransaction().replace(R.id.frame_layout, new SanPhamFragment()).commit();
         Toast.makeText(getApplicationContext(), "alo", Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);
@@ -129,6 +134,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onclickhoadon(View view) {
         toolbar.setTitle("Hóa Đơn");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.show();
         fragmentManager.beginTransaction().replace(R.id.frame_layout, new HoaDonFragment()).commit();
         Toast.makeText(getApplicationContext(), "alo", Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);
@@ -138,6 +145,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onclickkh(View view) {
         toolbar.setTitle("Khách Hàng");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.show();
         fragmentManager.beginTransaction().replace(R.id.frame_layout, new KhachHangFragment()).commit();
         Toast.makeText(getApplicationContext(), "alo", Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);

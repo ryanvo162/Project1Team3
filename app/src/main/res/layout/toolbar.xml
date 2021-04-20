@@ -3,18 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="125dp"
     android:fitsSystemWindows="true"
+    android:background="@color/white"
     app:layout_scrollFlags="scroll|enterAlways"
-    app:title="Paw &amp; Coat"
+    app:title="@string/ten_app"
+    app:titleMarginTop="75dp"
+    app:titleTextAppearance="@style/Toolbar.TitleText"
     app:titleTextColor="@color/titleColor"
-    app:titleTextAppearance="@style/Toolbar.TitleText">
+    app:buttonGravity="bottom">
+
 
     <ImageView
         android:id="@+id/imgToolbar"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:layout_marginRight="30dp"
+        android:layout_marginRight="40dp"
         android:src="@drawable/toolbar_pets" />
 </androidx.appcompat.widget.Toolbar>
