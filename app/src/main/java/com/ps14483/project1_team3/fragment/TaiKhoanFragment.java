@@ -1,15 +1,18 @@
 package com.ps14483.project1_team3.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.snackbar.BaseTransientBottomBar;
@@ -21,8 +24,11 @@ import com.ps14483.project1_team3.MainActivity;
 import com.ps14483.project1_team3.R;
 
 public class TaiKhoanFragment extends Fragment {
+    Toolbar toolbar;
+    ImageView imgToolbar;
     TextView tentk,loaitk,logout;
     Button taotk,doipass;
+    @SuppressLint("ResourceType")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -32,6 +38,10 @@ public class TaiKhoanFragment extends Fragment {
         taotk=view.findViewById(R.id.btntaoTK);
         doipass=view.findViewById(R.id.btndoipass);
         logout=view.findViewById(R.id.btnThoat);
+        toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
+        imgToolbar = (ImageView) toolbar.findViewById(R.id.imgToolbar);
+        imgToolbar.setImageResource(R.drawable.toolbar_kh);
+
         //lấy tên
 
         tentk.setText(((MainActivity)getActivity()).name);

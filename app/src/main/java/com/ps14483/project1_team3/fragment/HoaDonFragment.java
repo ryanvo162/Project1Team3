@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,6 +41,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class HoaDonFragment extends Fragment {
+    Toolbar toolbar;
+    ImageView imgToolbar;
     private Context mContext;
     RecyclerView rcv;
     HoaDonAdapter adapter;
@@ -67,6 +70,9 @@ public class HoaDonFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_hoadon, container, false);
         rcv=view.findViewById(R.id.rc_hoadon);
+        toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
+        imgToolbar = (ImageView) toolbar.findViewById(R.id.imgToolbar);
+        imgToolbar.setImageResource(R.drawable.toolbar_hd);
         rcv.setLayoutManager(new LinearLayoutManager(getActivity()));
         FirebaseRecyclerOptions<Hoadon> options=new FirebaseRecyclerOptions.Builder<Hoadon>()
                 .setQuery(reference.child("HoaDon"),Hoadon.class).build();

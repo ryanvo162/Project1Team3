@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,6 +36,8 @@ import com.ps14483.project1_team3.adapter.KhachHangAdapter;
 import com.ps14483.project1_team3.model.KhachHang;
 
 public class KhachHangFragment extends Fragment {
+    Toolbar toolbar;
+    ImageView imgToolbar;
     RecyclerView rcv;
     KhachHangAdapter adapter;
     FirebaseDatabase database=FirebaseDatabase.getInstance();
@@ -49,6 +52,9 @@ public class KhachHangFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_kh, container, false);
         rcv=view.findViewById(R.id.rc_kh);
+        toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
+        imgToolbar = (ImageView) toolbar.findViewById(R.id.imgToolbar);
+        imgToolbar.setImageResource(R.drawable.toolbar_kh);
         rcv.setLayoutManager(new LinearLayoutManager(getActivity()));
         FirebaseRecyclerOptions<KhachHang> options=new FirebaseRecyclerOptions.Builder<KhachHang>()
                 .setQuery(spref,KhachHang.class).build();
