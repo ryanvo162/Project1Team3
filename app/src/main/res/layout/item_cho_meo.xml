@@ -17,7 +17,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white">
+        android:background="@color/light_blue">
 
 
         <RelativeLayout
@@ -40,7 +40,7 @@
 
         </RelativeLayout>
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_pet"
             android:layout_width="119dp"
             android:layout_height="98dp"

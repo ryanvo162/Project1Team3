@@ -10,6 +10,7 @@
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     android:layout_marginTop="8dp"
+    android:background="@color/light_blue"
     app:cardBackgroundColor="@color/purple_500"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -17,7 +18,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white">
+        android:background="@color/light_blue">
 
 
         <RelativeLayout

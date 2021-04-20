@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="wrap_content"
-        android:background="@color/white">
+        android:background="@color/light_orange">
         <ImageView
             android:id="@+id/img_guest_sp"
             android:layout_width="119dp"

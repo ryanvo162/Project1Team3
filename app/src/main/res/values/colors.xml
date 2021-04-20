@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="fab">#A8B8BE</color>
     <color name="titleColor">#619696</color>
+    <color name="light_blue">#C6D8D4</color>
+    <color name="light_orange">#F5D0C1</color>
 </resources>
