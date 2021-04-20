@@ -55,31 +55,31 @@ public class HoaDonAdapter extends FirebaseRecyclerAdapter<Hoadon,HoaDonAdapter.
         holder.tvtenkh.setText(hoadon.tenkh+"");
         holder.tvgia.setText(hoadon.giamua+"");
         holder.tvngay.setText(hoadon.ngaymua+"");
-        holder.imgdel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder b = new AlertDialog.Builder(context);
-                b.setTitle("");
-                b.setMessage("Bạn có muốn xóa không?");
-                b.setPositiveButton("Có", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        Del(position);
-                        HoaDonAdapter.this.notifyDataSetChanged();
-                    }
-                });
-
-                b.setNegativeButton("Không", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.dismiss();
-                    }
-                });
-
-                AlertDialog al = b.create();
-
-                al.show();
-            }
-
-        });
+//        holder.imgdel.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                AlertDialog.Builder b = new AlertDialog.Builder(context);
+//                b.setTitle("");
+//                b.setMessage("Bạn có muốn xóa không?");
+//                b.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int id) {
+//                        Del(position);
+//                        HoaDonAdapter.this.notifyDataSetChanged();
+//                    }
+//                });
+//
+//                b.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int id) {
+//                        dialog.dismiss();
+//                    }
+//                });
+//
+//                AlertDialog al = b.create();
+//
+//                al.show();
+//            }
+//
+//        });
 
 
 
