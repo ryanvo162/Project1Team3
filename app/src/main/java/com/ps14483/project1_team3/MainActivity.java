@@ -33,6 +33,8 @@ import com.ps14483.project1_team3.fragment.ThucAnFragment;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button thuan;
+
     Toolbar toolbar;
     DrawerLayout drawer;
     NavigationView navigation_view;
