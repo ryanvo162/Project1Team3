@@ -1,16 +1,16 @@
 package com.ps14483.project1_team3.model;
 
 public class User {
-    public String key, name, username, password;
+    public String  name, username, password;
 
     public User() {
     }
 
-    public User(String name, String username, String password,String key) {
+    public User(String name, String username, String password) {
         this.name = name;
         this.username = username;
         this.password = password;
-        this.key=key;
+
     }
 
     public String getName() {

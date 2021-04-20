@@ -55,7 +55,7 @@ public class CreateNewUserActivity extends AppCompatActivity {
                 reference = database.getReference("PetShop").child("user");
 
                 String id,name, userName,pass, rePass;
-                id=reference.push().getKey();
+                
                 name = edName.getText().toString().trim();
                 userName = edUserName.getText().toString().trim();
                 pass = edPass.getText().toString().trim();
@@ -94,9 +94,9 @@ public class CreateNewUserActivity extends AppCompatActivity {
                             }
 
 
-                            User item = new User(id,name, userName, pass);
+                            User item = new User(name, userName, pass);
 
-                            reference.child(id).setValue(item).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            reference.child(userName).setValue(item).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     Toast.makeText(CreateNewUserActivity.this,"Tạo Thành Công",Toast.LENGTH_LONG).show();
