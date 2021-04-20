@@ -13,5 +13,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/logo_khong_chu"/>
+        app:srcCompat="@drawable/logokhongchu"/>
   </FrameLayout>

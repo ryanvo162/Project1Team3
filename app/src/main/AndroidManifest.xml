@@ -2,16 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ps14483.project1_team3">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logokhongchu"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logokhongchu"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Project1_Team3">
-        <activity android:name=".SplashScreenActivity" >
+        android:theme="@style/Theme.Design.Light.NoActionBar">
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,6 +23,7 @@
         <activity android:name=".ChangePassActivity"></activity>
         <activity android:name=".CreateNewUserActivity"></activity>
         <activity android:name=".GuestActivity"></activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
