@@ -41,7 +41,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilPass"
             style="@style/textInputLayout"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="70dp"
             android:layout_marginBottom="30dp"
             app:passwordToggleEnabled="true">
 
@@ -77,7 +77,7 @@
             android:id="@+id/tilReNewPass"
             style="@style/textInputLayout"
             app:passwordToggleEnabled="true"
-            android:layout_marginBottom="70dp">
+            android:layout_marginBottom="75dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edReNewPass"

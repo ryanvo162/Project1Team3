@@ -34,9 +34,9 @@
                 android:src="@drawable/tai_khoan"
                 android:gravity="center"
                 android:layout_marginTop="48dp"
-                android:layout_width="150dp"
+                android:layout_width="217dp"
                 android:layout_gravity="center"
-                android:layout_height="150dp"/>
+                android:layout_height="217dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -46,11 +46,12 @@
                 <TextView
                     android:id="@+id/tvTen"
                     android:gravity="center"
-                    android:text="UserName"
-                    android:layout_marginTop="12dp"
-                    android:textSize="18sp"
+                    android:text="username"
+                    android:layout_marginTop="10dp"
+                    android:textSize="21sp"
                     android:textStyle="bold"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/montserrat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
@@ -59,9 +60,9 @@
                     android:text="Administrator"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:textSize="20dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="16dp"
+                    android:textSize="21dp"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_marginTop="15dp"
                     android:padding="8dp"
                     android:textColor="#C69700"
                     android:layout_width="wrap_content"
@@ -85,9 +86,8 @@
             android:background="@drawable/custom_button_taikhoan"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginHorizontal="40dp"
-            />
+            android:layout_marginTop="40dp"
+            android:layout_marginHorizontal="40dp"/>
 
         <Button
             android:id="@+id/btndoipass"
