@@ -54,8 +54,7 @@ public class CreateNewUserActivity extends AppCompatActivity {
                 database = FirebaseDatabase.getInstance();
                 reference = database.getReference("PetShop").child("user");
 
-                String id,name, userName,pass, rePass;
-                
+                String name, userName,pass, rePass;
                 name = edName.getText().toString().trim();
                 userName = edUserName.getText().toString().trim();
                 pass = edPass.getText().toString().trim();
