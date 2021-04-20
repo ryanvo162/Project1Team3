@@ -36,6 +36,7 @@
 
             <TextView
                 android:id="@+id/tv_ten_sp"
+                android:textStyle="bold"
                 style="@style/cardViewText"
                 android:text="Tên Sp" />
 
