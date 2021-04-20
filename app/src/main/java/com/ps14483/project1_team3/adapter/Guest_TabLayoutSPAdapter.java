@@ -34,9 +34,9 @@ public class Guest_TabLayoutSPAdapter extends FragmentStatePagerAdapter {
         String title="";
         switch (position)
         {
-            case 0: title="Thức Ăn";
+            case 0: title="Thực phẩm";
                 break;
-            case 1: title="Đồ Chơi";
+            case 1: title="Phụ kiện";
                 break;
         }
         return title;
