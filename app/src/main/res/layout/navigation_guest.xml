@@ -1,63 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.navigation.NavigationView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.navigation.NavigationView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_gravity="start"
-    android:layout_width="match_parent"
     android:id="@+id/new_nav"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DDDDDD">
+    android:layout_gravity="start"
+    android:background="#C6D8D4">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="80dp"
+        android:src="@drawable/bg_taikhoan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
-
         <Button
             android:id="@+id/btnThuCung"
-            android:text="Thú Cưng"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textAllCaps="false"
-            android:textSize="21sp"
-            android:fontFamily="@font/montserrat"
             android:layout_gravity="center"
-            android:background="@drawable/custom_button_taikhoan"
-            android:paddingTop="20dp"
-            android:onClick="onclickpet"
-            android:paddingBottom="20dp"
-            android:layout_marginTop="80dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"/>
-
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/custom_button_taikhoan"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:onClick="onclickpet"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:text="Thú Cưng"
+            android:textAllCaps="false"
+            android:textSize="21sp" />
 
 
         <Button
             android:id="@+id/btnSanPham"
-            android:text="Sản Phẩm"
-            android:onClick="onclicksp"
-            android:layout_marginTop="25dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textAllCaps="false"
-            android:textSize="21sp"
-            android:fontFamily="@font/montserrat"
             android:layout_gravity="center"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="40dp"
             android:background="@drawable/custom_button_taikhoan"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:onClick="onclicksp"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"/>
+            android:text="Sản Phẩm"
+            android:textAllCaps="false"
+            android:textSize="21sp" />
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="383dp"
+            android:layout_height="match_parent"
             android:layout_gravity="end"
             tools:ignore="RedundantNamespace">
 
@@ -65,32 +74,17 @@
                 android:id="@+id/btnDangXuat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="40dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="15dp"
                 android:fontFamily="@font/montserrat"
                 android:onClick="logOut"
                 android:padding="15dp"
                 android:text="Đăng Xuất"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="80dp"
-                android:layout_marginEnd="40dp"
-                android:layout_marginBottom="80dp"
-                android:src="@drawable/bg_taikhoan"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>

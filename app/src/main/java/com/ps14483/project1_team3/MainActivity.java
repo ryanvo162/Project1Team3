@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressLint("ResourceAsColor")
-    public void onclickPet(View view) {
+    public void onClickPet(View view) {
         toolbar.setTitle("Thú Cưng");
         ActionBar actionBar = getSupportActionBar();
         actionBar.show();
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onclickptaikhoan(View view) {
+    public void onClickTaiKhoan(View view) {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         fragmentManager.beginTransaction().replace(R.id.frame_layout, new TaiKhoanFragment()).commit();
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onclickSp(View view) {
+    public void onClickSanPham(View view) {
         toolbar.setTitle("Sản Phẩm");
         ActionBar actionBar = getSupportActionBar();
         actionBar.show();
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onclickhoadon(View view) {
+    public void onClickHoaDon(View view) {
         toolbar.setTitle("Hóa Đơn");
         ActionBar actionBar = getSupportActionBar();
         actionBar.show();
@@ -142,8 +142,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    public void onclickkh(View view) {
+    public void onClickKhachHang(View view) {
         toolbar.setTitle("Khách Hàng");
         ActionBar actionBar = getSupportActionBar();
         actionBar.show();
