@@ -1,5 +1,6 @@
 package com.ps14483.project1_team3;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -55,7 +56,7 @@ public class ChangePassActivity extends AppCompatActivity {
                 newPass = edNewPass.getText().toString();
                 newRePass = edReNewPass.getText().toString();
 
-                if(!pass.equalsIgnoreCase(pass)){
+                if(!pass.equalsIgnoreCase(password)){
                     tilPass.setError("Mật khẩu cũ không đúng!");
                     return;
                 }else {
@@ -75,11 +76,13 @@ public class ChangePassActivity extends AppCompatActivity {
                 }
 
                 HashMap hashMap = new HashMap();
-                hashMap.put("pass",newPass);
+                hashMap.put("password",newPass);
                 reference.child(username).updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener() {
                     @Override
                     public void onComplete(@NonNull Task task) {
                         Toast.makeText(ChangePassActivity.this,"Đổi Mật Khẩu Thành Công!",Toast.LENGTH_LONG).show();
+                        Intent intent=new Intent(ChangePassActivity.this,LoginActivity.class);
+                        startActivity(intent);
                         finish();
                     }
                 });
