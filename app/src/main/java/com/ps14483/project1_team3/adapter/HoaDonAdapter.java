@@ -103,7 +103,7 @@ public class HoaDonAdapter extends FirebaseRecyclerAdapter<Hoadon,HoaDonAdapter.
             tvtenkh=itemView.findViewById(R.id.tv_tenkh);
             tvgia=itemView.findViewById(R.id.tv_gia_hoadon);
             tvngay=itemView.findViewById(R.id.tvngaynua_hoadon);
-            imgdel=itemView.findViewById(R.id.phieumuon_del);
+//            imgdel=itemView.findViewById(R.id.phieumuon_del);
         }
     }
 
