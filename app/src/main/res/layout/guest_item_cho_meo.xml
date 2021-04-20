@@ -24,7 +24,6 @@
             android:id="@+id/img_guest_pet"
             android:layout_width="182dp"
             android:layout_height="163dp"
-            android:layout_below="@id/khung"
             android:layout_gravity="center_horizontal"
             android:layout_margin="8dp"
             android:src="@drawable/ic_round_calendar_today_24" />

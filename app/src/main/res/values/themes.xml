@@ -33,9 +33,7 @@
     <style name="cardViewText">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center_horizontal</item>
-        <item name="android:textSize">15sp</item>
-        <item name="android:paddingLeft">8dp</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
