@@ -16,7 +16,7 @@
         android:layout_gravity="bottom|center"
         android:layout_marginBottom="32dp"
         android:src="@drawable/ic_baseline_add_24"
-        app:backgroundTint="@color/green_dark"
+        app:backgroundTint="@color/fab"
         app:fabCustomSize="80dp"
         app:layout_anchor="@id/rc_kh"
         app:layout_anchorGravity="bottom|right|end"

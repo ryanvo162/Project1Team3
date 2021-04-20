@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@android:color/white"
+    android:orientation="vertical"
     tools:context=".ChangePassActivity">
 
     <ImageView
@@ -13,7 +13,6 @@
         android:layout_height="175dp"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="10dp"
         android:src="@drawable/logo" />
 
     <TextView
@@ -25,18 +24,18 @@
         android:gravity="right"
         android:text="Change Password"
         android:textColor="#000000"
-        android:textSize="24sp"/>
+        android:textSize="18sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
         android:layout_gravity="center"
-        android:orientation="vertical"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/round_background_login"
         android:elevation="20dp"
-        android:translationZ="10dp"
-        android:background="@drawable/round_background_login">
+        android:orientation="vertical"
+        android:translationZ="10dp">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilPass"
@@ -52,7 +51,8 @@
                 android:fontFamily="@font/montserrat"
                 android:hint="Current Password"
                 android:inputType="textPassword"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:textSize="14sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,15 +69,16 @@
                 android:fontFamily="@font/montserrat"
                 android:hint="New Password"
                 android:inputType="textPassword"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:textSize="14sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilReNewPass"
             style="@style/textInputLayout"
-            app:passwordToggleEnabled="true"
-            android:layout_marginBottom="75dp">
+            android:layout_marginBottom="75dp"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edReNewPass"
@@ -86,30 +87,26 @@
                 android:fontFamily="@font/montserrat"
                 android:hint="Confirm Password"
                 android:inputType="textPassword"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:textSize="14sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        style="@style/linearLayout2btn"
+    <Button
+        android:id="@+id/btnDoiPass"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="25dp"
-        android:layout_marginLeft="25dp"
-        android:gravity="center"
-        android:layout_marginRight="25dp">
-
-        <Button
-            android:id="@+id/btnDoiPass"
-            android:layout_width="165dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/round_background_button"
-            android:fontFamily="@font/montserrat"
-            android:shadowColor="#000000"
-            android:textAllCaps="false"
-            android:text="Confirm"
-            android:textColor="@color/black" />
-    </LinearLayout>
+        android:background="@drawable/round_background_button"
+        android:fontFamily="@font/montserrat"
+        android:shadowColor="#000000"
+        android:text="Confirm"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
 
 
 </LinearLayout>

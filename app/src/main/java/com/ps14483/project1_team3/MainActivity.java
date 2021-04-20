@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -37,9 +38,10 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawer;
     NavigationView navigation_view;
     FragmentManager fragmentManager;
-    public String username,password,name;
+    public String username, password, name;
     FragmentTransaction ft;
     ActionBarDrawerToggle bdtoggle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra("User");
-        username = bundle.getString("username","");
-        password = bundle.getString("password","");
-        name = bundle.getString("name","");
+        username = bundle.getString("username", "");
+        password = bundle.getString("password", "");
+        name = bundle.getString("name", "");
 
         fragmentManager = getSupportFragmentManager();
 
@@ -65,13 +67,13 @@ public class MainActivity extends AppCompatActivity {
 
 //        navigation_view.getMenu();
 
-        fragmentManager.beginTransaction().add(R.id.frame_layout,new PetFragment()).commit();
+        fragmentManager.beginTransaction().add(R.id.frame_layout, new PetFragment()).commit();
 
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == R.id.home);
+        if (item.getItemId() == R.id.home) ;
         drawer.openDrawer(GravityCompat.START);
         return super.onOptionsItemSelected(item);
     }
@@ -88,60 +90,61 @@ public class MainActivity extends AppCompatActivity {
         bdtoggle.onConfigurationChanged(newConfig);
     }
 
-    public void logout()
-    {
+    public void logout() {
         Snackbar.make(findViewById(R.id.frame_layout), "Bạn có muốn đăng xuất", BaseTransientBottomBar.LENGTH_SHORT)
                 .setAction("Thoát", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent=new Intent(MainActivity.this,LoginActivity.class);
+                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                         startActivity(intent);
                     }
                 }).show();
 
     }
-    public void onclickPet(View view)
-    {
+
+    @SuppressLint("ResourceAsColor")
+    public void onclickPet(View view) {
         toolbar.setTitle("Thú Cưng");
-        fragmentManager.beginTransaction().replace(R.id.frame_layout,new PetFragment()).commit();
-        Toast.makeText(getApplicationContext(),"alo",Toast.LENGTH_SHORT).show();
+        fragmentManager.beginTransaction().replace(R.id.frame_layout, new PetFragment()).commit();
+        Toast.makeText(getApplicationContext(), "alo", Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);
 
     }
-    public void onclickptaikhoan(View view)
-    {
+
+    public void onclickptaikhoan(View view) {
         toolbar.setTitle("");
-        fragmentManager.beginTransaction().replace(R.id.frame_layout,new TaiKhoanFragment()).commit();
-        Toast.makeText(getApplicationContext(),"alo",Toast.LENGTH_SHORT).show();
+        fragmentManager.beginTransaction().replace(R.id.frame_layout, new TaiKhoanFragment()).commit();
+        Toast.makeText(getApplicationContext(), "alo", Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);
 
     }
-    public void onclickSp(View view)
-    {
+
+    public void onclickSp(View view) {
         toolbar.setTitle("Sản Phẩm");
-        fragmentManager.beginTransaction().replace(R.id.frame_layout,new SanPhamFragment()).commit();
-        Toast.makeText(getApplicationContext(),"alo",Toast.LENGTH_SHORT).show();
+        fragmentManager.beginTransaction().replace(R.id.frame_layout, new SanPhamFragment()).commit();
+        Toast.makeText(getApplicationContext(), "alo", Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);
 
     }
-    public void onclickhoadon(View view)
-    {
+
+    public void onclickhoadon(View view) {
         toolbar.setTitle("Hóa Đơn");
-        fragmentManager.beginTransaction().replace(R.id.frame_layout,new HoaDonFragment()).commit();
-        Toast.makeText(getApplicationContext(),"alo",Toast.LENGTH_SHORT).show();
+        fragmentManager.beginTransaction().replace(R.id.frame_layout, new HoaDonFragment()).commit();
+        Toast.makeText(getApplicationContext(), "alo", Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);
 
     }
-    public void onclickkh(View view)
-    {
+
+
+    public void onclickkh(View view) {
         toolbar.setTitle("Khách Hàng");
-        fragmentManager.beginTransaction().replace(R.id.frame_layout,new KhachHangFragment()).commit();
-        Toast.makeText(getApplicationContext(),"alo",Toast.LENGTH_SHORT).show();
+        fragmentManager.beginTransaction().replace(R.id.frame_layout, new KhachHangFragment()).commit();
+        Toast.makeText(getApplicationContext(), "alo", Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);
 
     }
-    public void logOut(View view)
-    {
+
+    public void logOut(View view) {
         logout();
     }
 
