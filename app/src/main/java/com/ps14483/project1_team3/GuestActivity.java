@@ -35,8 +35,7 @@ public class GuestActivity extends AppCompatActivity {
     DrawerLayout drawer;
     NavigationView navigation_view;
     FragmentManager fragmentManager;
-    public String username,password,name;
-    FragmentTransaction ft;
+    public String username, name;
     ActionBarDrawerToggle bdtoggle;
 
     @Override
@@ -48,23 +47,18 @@ public class GuestActivity extends AppCompatActivity {
         drawer = findViewById(R.id.drawer_layout);
         navigation_view = findViewById(R.id.new_nav);
 
-
         fragmentManager = getSupportFragmentManager();
 
         setSupportActionBar(toolbar);
         bdtoggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.open_nav, R.string.close_nave);
         drawer.addDrawerListener(bdtoggle);
         bdtoggle.syncState();
-
-//        navigation_view.getMenu();
-
-        fragmentManager.beginTransaction().add(R.id.guest_frame_layout,new GuestScreenFragment()).commit();
-
+        fragmentManager.beginTransaction().add(R.id.guest_frame_layout, new GuestScreenFragment()).commit();
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == R.id.home);
+        if (item.getItemId() == R.id.home) ;
         drawer.openDrawer(GravityCompat.START);
         return super.onOptionsItemSelected(item);
     }
@@ -81,39 +75,32 @@ public class GuestActivity extends AppCompatActivity {
         bdtoggle.onConfigurationChanged(newConfig);
     }
 
-    public void logout()
-    {
-        Snackbar.make(findViewById(R.id.guest_frame_layout), "Bạn có muốn đăng xuất", BaseTransientBottomBar.LENGTH_SHORT)
+    public void logout() {
+        Snackbar.make(findViewById(R.id.guest_frame_layout), "Bạn có muốn thoát", BaseTransientBottomBar.LENGTH_SHORT)
                 .setAction("Thoát", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent=new Intent(GuestActivity.this,LoginActivity.class);
+                        Intent intent = new Intent(GuestActivity.this, LoginActivity.class);
                         startActivity(intent);
                     }
                 }).show();
 
     }
-    public void onclickpet(View view)
-    {
+
+    public void onClickThuCung(View view) {
         toolbar.setTitle("Thú Cưng");
-        fragmentManager.beginTransaction().replace(R.id.guest_frame_layout,new Guest_PetFragment()).commit();
-        Toast.makeText(getApplicationContext(),"alo",Toast.LENGTH_SHORT).show();
+        fragmentManager.beginTransaction().replace(R.id.guest_frame_layout, new Guest_PetFragment()).commit();
         drawer.closeDrawer(GravityCompat.START);
-
     }
-    public void onclicksp(View view)
-    {
+
+    public void onClickSp(View view) {
         toolbar.setTitle("Sản Phẩm");
-        fragmentManager.beginTransaction().replace(R.id.guest_frame_layout,new Guest_SanPhamFragment()).commit();
-        Toast.makeText(getApplicationContext(),"alo",Toast.LENGTH_SHORT).show();
+        fragmentManager.beginTransaction().replace(R.id.guest_frame_layout, new Guest_SanPhamFragment()).commit();
         drawer.closeDrawer(GravityCompat.START);
-
     }
 
-    public void logOut(View view)
-    {
+    public void Thoat(View view) {
         logout();
-
     }
 
 }
