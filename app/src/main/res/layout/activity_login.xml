@@ -9,11 +9,10 @@
     tools:context=".LoginActivity">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
         android:layout_gravity="center"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/logo" />
 
     <TextView
@@ -24,7 +23,7 @@
         android:fontFamily="@font/montserrat"
         android:text="Login"
         android:textColor="#000000"
-        android:textSize="24sp" />
+        android:textSize="18sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,7 +48,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
                 android:hint="Username"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize="14dp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -66,14 +66,16 @@
                 android:fontFamily="@font/montserrat"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:textSize="14dp" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -87,7 +89,8 @@
             android:shadowColor="#000000"
             android:text="Login"
             android:textAllCaps="false"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="14dp" />
 
         <Button
             android:id="@+id/btnGuest"
@@ -98,7 +101,8 @@
             android:fontFamily="@font/montserrat"
             android:text="Guest"
             android:textAllCaps="false"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="14dp" />
     </LinearLayout>
 
 </LinearLayout>
