@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#244233"
-    android:scrollbars="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F5D0C1"
+    android:scrollbars="vertical">
 
     <ImageView
         android:layout_width="match_parent"
@@ -19,8 +17,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -31,42 +29,43 @@
             android:orientation="vertical">
 
             <ImageView
-                android:src="@drawable/tai_khoan"
-                android:gravity="center"
-                android:layout_marginTop="48dp"
-                android:layout_width="217dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:layout_height="217dp"/>
+                android:layout_marginTop="48dp"
+                android:gravity="center"
+                android:src="@drawable/tai_khoan" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/tvTen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/montserrat"
                     android:gravity="center"
                     android:text="username"
-                    android:layout_marginTop="10dp"
-                    android:textSize="21sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/montserrat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="#3A3A3A"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvLoaiTK"
-                    android:text="Administrator"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:textSize="21dp"
-                    android:fontFamily="@font/montserrat"
-                    android:layout_marginTop="15dp"
-                    android:padding="8dp"
-                    android:textColor="#C69700"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Administrator"
+                    android:textColor="#619696"
+                    android:textSize="16dp" />
             </LinearLayout>
 
 
@@ -74,55 +73,55 @@
 
         <Button
             android:id="@+id/btntaoTK"
-            android:text="Tạo tài khoản"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textAllCaps="false"
-            android:textSize="21sp"
-            android:textColor="#FFFFFF"
-            android:fontFamily="@font/montserrat"
             android:layout_gravity="center"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/custom_button_taikhoan"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginHorizontal="40dp"/>
+            android:text="Tạo tài khoản"
+            android:textAllCaps="false"
+            android:textColor="#3A3A3A"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/btndoipass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textAllCaps="false"
-            android:textSize="21sp"
-            android:textColor="#FFFFFF"
-            android:fontFamily="@font/montserrat"
             android:layout_gravity="center"
-            android:background="@drawable/custom_button_taikhoan"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
             android:layout_marginHorizontal="40dp"
             android:layout_marginTop="30dp"
-            android:text="Đổi mật khẩu"/>
+            android:background="@drawable/custom_button_taikhoan"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:text="Đổi mật khẩu"
+            android:textAllCaps="false"
+            android:textColor="#3A3A3A"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/btnThoat"
-            android:text="Đăng xuất"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textAllCaps="false"
-            android:textSize="21sp"
-            android:textColor="#FFFFFF"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/montserrat"
             android:layout_gravity="center"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="40dp"
             android:background="@drawable/custom_button_taikhoan"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"/>
+            android:text="Đăng xuất"
+            android:textAllCaps="false"
+            android:textColor="#3A3A3A"
+            android:textSize="14sp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
