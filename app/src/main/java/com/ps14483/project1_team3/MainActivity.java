@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        navigation_view.getMenu();
 
-        fragmentManager.beginTransaction().add(R.id.frame_layout,new TaiKhoanFragment()).commit();
+        fragmentManager.beginTransaction().add(R.id.frame_layout,new PetFragment()).commit();
 
     }
 
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onclickptaikhoan(View view)
     {
-        toolbar.setTitle("Thú Cưng");
+        toolbar.setTitle("");
         fragmentManager.beginTransaction().replace(R.id.frame_layout,new TaiKhoanFragment()).commit();
         Toast.makeText(getApplicationContext(),"alo",Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);
