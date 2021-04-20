@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/item_kh"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="6dp"
+    android:elevation="5dp"
+    android:padding="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="8dp"
+    app:cardBackgroundColor="@color/purple_500"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/khung"
+            android:background="#F4E386"
+            >
+            <TextView
+                android:id="@+id/tv_ten_kh"
+                style="@style/cardViewText"
+                android:layout_marginLeft="16dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="Tên Kh"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tvgiasp1"
+            android:text="SDT: "
+            style="@style/cardViewText"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginVertical="8dp"
+            android:layout_below="@+id/khung"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/tv_sdt"
+            style="@style/cardViewText"
+            android:layout_below="@+id/khung"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="176dp"
+            android:layout_marginVertical="8dp"
+            android:layout_toRightOf="@+id/tvgiasp1"
+            android:text="20000"
+            android:textSize="20sp" />
+
+
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

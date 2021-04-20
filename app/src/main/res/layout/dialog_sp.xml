@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="0dp">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="36dp"
+        android:paddingTop="56dp"
+        android:paddingRight="36dp"
+        android:paddingBottom="56dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilTensp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edTen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tên" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilchitietsp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edchitietsp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Chi tiết" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilgiasp"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edgia"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:src="@drawable/ic_round_calendar_today_24"
+            android:id="@+id/dialog_img_sp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="80dp" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="100dp"
+                android:background="@drawable/round_background_button"
+
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Cancel" />
+
+            <Button
+                android:id="@+id/btnOK"
+                android:layout_width="100dp"
+                android:background="@drawable/round_background_button"
+
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="OK"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

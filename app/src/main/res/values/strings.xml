@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Pet Shop</string>
+    <string name="open_nav">Open Navigation Bar</string>
+    <string name="close_nave">Close Navigation Bar</string>
+</resources>

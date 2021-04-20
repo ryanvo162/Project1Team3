@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.navigation.NavigationView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="start"
+    android:layout_width="match_parent"
+    android:id="@+id/new_nav"
+    android:layout_height="match_parent"
+    android:background="#DDDDDD">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="80dp"
+        android:src="@drawable/bg_taikhoan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:src="@drawable/tai_khoan"
+                android:gravity="center"
+                android:layout_width="100dp"
+                android:layout_height="100dp"/>
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Username"
+                android:textSize="21sp"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnThuCung"
+            android:text="Thú Cưng"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textSize="21sp"
+            android:fontFamily="@font/montserrat"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_button_taikhoan"
+            android:paddingTop="20dp"
+            android:onClick="onclickPet"
+            android:paddingBottom="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"/>
+
+        <Button
+            android:id="@+id/btnKhachHang"
+            android:text="Khách Hàng"
+            android:onClick="onclickkh"
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textSize="21sp"
+            android:fontFamily="@font/montserrat"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_button_taikhoan"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"/>
+
+        <Button
+            android:id="@+id/btnHoaDon"
+            android:text="Hóa Đơn"
+            android:onClick="onclickhoadon"
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textSize="21sp"
+            android:fontFamily="@font/montserrat"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_button_taikhoan"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"/>
+
+        <Button
+            android:id="@+id/btnSanPham"
+            android:text="Sản Phẩm"
+            android:onClick="onclickSp"
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textSize="21sp"
+            android:fontFamily="@font/montserrat"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_button_taikhoan"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"/>
+
+        <Button
+            android:onClick="onclickptaikhoan"
+            android:id="@+id/btnTaiKhoan"
+            android:text="Tài Khoản"
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textSize="21sp"
+            android:fontFamily="@font/montserrat"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_button_taikhoan"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_width="match_parent"
+            tools:ignore="RedundantNamespace">
+            <TextView
+                android:id="@+id/btnDangXuat"
+                android:onClick="logOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:padding="15dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/black"
+                android:textAllCaps="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Đăng Xuất" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</com.google.android.material.navigation.NavigationView>
