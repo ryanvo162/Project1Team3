@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:fontFamily="@font/montserrat"
-        android:text="Thú cưng"
+        android:text="Thú Cưng"
         android:textColor="@color/black"
         android:textSize="30dp" />
 

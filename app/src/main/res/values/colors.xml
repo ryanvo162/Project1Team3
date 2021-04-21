@@ -11,4 +11,5 @@
     <color name="titleColor">#619696</color>
     <color name="light_blue">#C6D8D4</color>
     <color name="light_orange">#F5D0C1</color>
+    <color name="black_app">#3a3a3a</color>
 </resources>
