@@ -162,7 +162,7 @@ public class HoaDonFragment extends Fragment {
                 {
                     arrayList.add(item.getKey());
                 }
-                ArrayAdapter<String>adapter=new ArrayAdapter<>(mContext,R.layout.spinner_iten,arrayList);
+                ArrayAdapter<String>adapter=new ArrayAdapter<>(mContext,R.layout.spinner_item,arrayList);
                 sploaisp.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
                 sploaisp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -180,7 +180,7 @@ public class HoaDonFragment extends Fragment {
                                     gia1.add(item.child("key").getValue().toString());
 
                                 }
-                                ArrayAdapter<String>adapter=new ArrayAdapter<>(mContext,R.layout.spinner_iten,tensp1);
+                                ArrayAdapter<String>adapter=new ArrayAdapter<>(mContext,R.layout.spinner_item,tensp1);
 
                                 sptensp.setAdapter(adapter);
                                 adapter.notifyDataSetChanged();
@@ -245,7 +245,7 @@ public class HoaDonFragment extends Fragment {
                 {
                     kh.add(item.child("ten").getValue(String.class));
                 }
-                ArrayAdapter<String>adapter=new ArrayAdapter<>(mContext,R.layout.spinner_iten,kh);
+                ArrayAdapter<String>adapter=new ArrayAdapter<>(mContext,R.layout.spinner_item,kh);
                 sptenkh.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
 

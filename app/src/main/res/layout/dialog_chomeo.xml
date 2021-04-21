@@ -2,103 +2,91 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="0dp">
+    android:background="@drawable/custom_dialog"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/montserrat"
+        android:text="Thú cưng"
+        android:textColor="@color/black"
+        android:textSize="30dp" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilTenpet"
+        style="@style/textInputLayout">
+
+        <EditText
+            android:id="@+id/edTenpet"
+            style="@style/editText"
+            android:hint="Tên" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilmaulong"
+        style="@style/textInputLayout">
+
+        <EditText
+            android:id="@+id/edmaulong"
+            style="@style/editText"
+            android:hint="Màu lông" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilchitiet"
+        style="@style/textInputLayout">
+
+        <EditText
+            android:id="@+id/edchitiet"
+            style="@style/editText"
+            android:hint="Chi tiết" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilgiapet"
+        style="@style/textInputLayout">
+
+        <EditText
+            android:id="@+id/edgiapet"
+            style="@style/editText"
+            android:hint="Giá"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <ImageView
+        android:id="@+id/dialog_img_pet"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_round_calendar_today_24" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingLeft="36dp"
-        android:paddingTop="56dp"
-        android:paddingRight="36dp"
-        >
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilTenpet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnCancelpet"
+            style="@style/buttonApp"
+            android:layout_margin="16dp"
+            android:text="Cancel" />
 
-            <EditText
-                android:id="@+id/edTenpet"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Tên" />
+        <Button
+            android:id="@+id/btnOKpet"
+            style="@style/buttonApp"
+            android:layout_margin="16dp"
+            android:text="OK" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilmaulong"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/edmaulong"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Màu lông" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilchitiet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/edchitiet"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Chi tiết" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilgiapet"
-            android:accessibilityPaneTitle="Giá"
-            android:layout_width="match_parent"
-
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/edgiapet"
-                android:inputType="number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Giá" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <ImageView
-            android:src="@drawable/ic_round_calendar_today_24"
-            android:id="@+id/dialog_img_pet"
-            android:layout_gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="80dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btnCancelpet"
-                android:layout_width="100dp"
-                android:background="@drawable/round_background_button"
-
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="Cancel" />
-
-            <Button
-                android:id="@+id/btnOKpet"
-                android:layout_width="100dp"
-                android:background="@drawable/round_background_button"
-
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="OK"
-                />
-
-        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
