@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -34,7 +35,7 @@ import com.ps14483.project1_team3.fragment.TaiKhoanFragment;
 import com.ps14483.project1_team3.fragment.ThucAnFragment;
 
 public class MainActivity extends AppCompatActivity {
-
+    TextView nav_name;
     Toolbar toolbar;
     DrawerLayout drawer;
     NavigationView navigation_view;
@@ -57,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
         username = bundle.getString("username", "");
         password = bundle.getString("password", "");
         name = bundle.getString("name", "");
-
+        nav_name=findViewById(R.id.tvName);
+        nav_name.setText(name);
         fragmentManager = getSupportFragmentManager();
 
         setSupportActionBar(toolbar);
