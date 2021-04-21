@@ -50,7 +50,7 @@ public class HoaDonFragment extends Fragment {
     FirebaseDatabase database=FirebaseDatabase.getInstance();
     DatabaseReference reference=database.getReference("PetShop");
     DatabaseReference ref1;
-    TextView tvNgay,tvgia;
+    TextView tvNgay,tvgia,tvsdt;
     FloatingActionButton flb;
     Spinner sploaisp,sptensp,sptenkh;
     Button btnok,btncancel;
@@ -58,6 +58,7 @@ public class HoaDonFragment extends Fragment {
     ArrayList<String> tensp1=new ArrayList<>();
     ArrayList<String>kh=new ArrayList<>();
     ArrayList<String> gia1=new ArrayList<>();
+    ArrayList<String> arraySDT=new ArrayList<>();
     String[] tenloai={"Chó","Mèo","Thực phẩm","Phụ kiện"};
     String gia,tenLoai;
     @Override
@@ -114,6 +115,7 @@ public class HoaDonFragment extends Fragment {
         sptenkh=dialog.findViewById(R.id.spinner_kh);
         tvgia=dialog.findViewById(R.id.dialog_gia_hoadon);
         tvNgay=dialog.findViewById(R.id.tvngaymua);
+        tvsdt=dialog.findViewById(R.id.dialog_sdt_hoadon);
         ImageView imgngay=dialog.findViewById(R.id.ivngay);
         btnok=dialog.findViewById(R.id.pm_btnOK_hoadon);
         btncancel=dialog.findViewById(R.id.pm_btnCancel_hoadon);
@@ -219,15 +221,12 @@ public class HoaDonFragment extends Fragment {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                                 tvgia.setText(snapshot.getValue().toString());
-                                                Log.d("giah", tvgia+"");
                                             }
-
                                             @Override
                                             public void onCancelled(@NonNull DatabaseError error) {
 
                                             }
                                         });
-                                        Log.d("gia", a+""+gia1+""+gia);
                                     }
 
                                     @Override
@@ -263,14 +262,38 @@ public class HoaDonFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 kh.clear();
+                arraySDT.clear();
                 for (DataSnapshot item: snapshot.getChildren())
                 {
                     kh.add(item.child("ten").getValue(String.class));
+                    arraySDT.add(item.child("key").getValue().toString());
                 }
                 ArrayAdapter<String>adapter=new ArrayAdapter<>(mContext,R.layout.spinner_item,kh);
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 sptenkh.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
+                sptenkh.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        String pos=arraySDT.get(position);
+                        reference.child("KhachHang").child(pos).child("sdt").addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                tvsdt.setText(snapshot.getValue().toString());
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
 
 
             }

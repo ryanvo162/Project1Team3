@@ -58,6 +58,18 @@
             android:gravity="center" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_sdt_hoadon"
+        style="@style/textInputLayout"
+        app:helperText="SĐT">
+
+        <TextView
+            android:id="@+id/dialog_sdt_hoadon"
+            style="@style/editText"
+            android:completionHint="SĐT khách hàng"
+            android:gravity="center"
+            android:hint="SĐT khách hàng" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         style="@style/textInputLayout"
