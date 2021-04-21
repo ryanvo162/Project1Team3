@@ -66,7 +66,6 @@ public class LoginActivity extends AppCompatActivity {
                                 bundle.putString("username",user.getUsername());
                                 bundle.putString("password",user.getPassword());
                                 i.putExtra("User",bundle);
-
                                 startActivity(i);
                                 finish();
                             }else {
