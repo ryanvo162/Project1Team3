@@ -113,6 +113,12 @@ public class ThucAnFragment extends Fragment {
                 Picasso.get().load(uri).into(img);
             }
         });
+        btncancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
         KiemloiNhap();
         btnok.setOnClickListener(new View.OnClickListener() {
             @Override

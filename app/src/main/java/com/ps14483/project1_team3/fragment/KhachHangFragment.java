@@ -100,6 +100,12 @@ public class KhachHangFragment extends Fragment {
         Button btncancel=dialog.findViewById(R.id.btnCancel);
         btnok.setText("ADD");
         KiemloiNhap();
+        btncancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
         btnok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

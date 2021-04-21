@@ -130,6 +130,12 @@ public class ChoFragment extends Fragment {
         btncancel=dialog.findViewById(R.id.btnCancelpet);
 //Kiểm lỗi nhập
         KiemloiNhap();
+        btncancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
 
 
 
