@@ -130,6 +130,7 @@ public class MeoAdapter extends FirebaseRecyclerAdapter<Meo,MeoAdapter.Holder> {
             public void onClick(View v) {
                 String ten=edten.getText().toString();
                 String maulong=edmaulong.getText().toString();
+                String chitiet=edchitiet.getText().toString();
                 int gia=Integer.parseInt(edgia.getText().toString());
                 HashMap hashMap = new HashMap();
                 hashMap.put("ten",ten);

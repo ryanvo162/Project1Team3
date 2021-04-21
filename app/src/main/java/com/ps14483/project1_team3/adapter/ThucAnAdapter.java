@@ -104,6 +104,7 @@ public class ThucAnAdapter extends FirebaseRecyclerAdapter<ThucAn,ThucAnAdapter.
             public void onClick(View v) {
                 String ten=edten.getText().toString();
                 int gia=Integer.parseInt(edgia.getText().toString());
+                String chitiet=edchitiet.getText().toString();
                 HashMap hashMap = new HashMap();
                 hashMap.put("ten",ten);
                 hashMap.put("gia",gia);

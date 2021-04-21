@@ -104,6 +104,7 @@ public class DoChoiAdapter extends FirebaseRecyclerAdapter<Dochoi,DoChoiAdapter.
             @Override
             public void onClick(View v) {
                 String ten=edten.getText().toString();
+                String chitiet=edchitiet.getText().toString();
                 int gia=Integer.parseInt(edgia.getText().toString());
                 HashMap hashMap = new HashMap();
                 hashMap.put("ten",ten);
