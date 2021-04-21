@@ -81,28 +81,15 @@
 
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            style="@style/buttonApp"
             android:layout_marginEnd="25dp"
-            android:background="@drawable/round_background_button"
-            android:fontFamily="@font/montserrat"
-            android:shadowColor="#000000"
-            android:text="Login"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="14dp" />
+            android:text="Login" />
 
         <Button
             android:id="@+id/btnGuest"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            style="@style/buttonApp"
             android:layout_marginEnd="0dp"
-            android:background="@drawable/round_background_button"
-            android:fontFamily="@font/montserrat"
-            android:text="Guest"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="14dp" />
+            android:text="Guest" />
     </LinearLayout>
 
 </LinearLayout>

@@ -96,17 +96,9 @@
 
     <Button
         android:id="@+id/btnDoiPass"
-        android:layout_width="165dp"
-        android:layout_height="wrap_content"
+        style="@style/buttonApp"
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
-        android:background="@drawable/round_background_button"
-        android:fontFamily="@font/montserrat"
-        android:shadowColor="#000000"
-        android:text="Confirm"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="14sp" />
-
+        android:text="Confirm" />
 
 </LinearLayout>

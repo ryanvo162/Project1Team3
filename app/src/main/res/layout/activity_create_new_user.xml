@@ -107,25 +107,13 @@
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
-    <LinearLayout
-        style="@style/linearLayout2btn"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginRight="25dp"
-        android:gravity="center">
 
-        <Button
-            android:id="@+id/btnCreateUser"
-            android:layout_width="165dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/round_background_button"
-            android:fontFamily="@font/montserrat"
-            android:shadowColor="#000000"
-            android:text="Create"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/btnCreateUser"
+        style="@style/buttonApp"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:text="Create"/>
 
 
 </LinearLayout>
