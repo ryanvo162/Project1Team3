@@ -1,10 +1,12 @@
 package com.ps14483.project1_team3.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,6 +22,7 @@ import com.squareup.picasso.Picasso;
 
 public class Guest_MeoAdapter extends FirebaseRecyclerAdapter<Meo, Guest_MeoAdapter.Holder> {
     private Context context;
+    public String[] mColors = {"#F5D0C1","#C6D8D4"};
 
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
@@ -40,6 +43,7 @@ public class Guest_MeoAdapter extends FirebaseRecyclerAdapter<Meo, Guest_MeoAdap
         holder.tvchitiet.setText(meo.chitiet);
         String imgUri= meo.img+"";
         Picasso.get().load(imgUri).into(holder.imguri);
+        holder.linearLayout.setBackgroundColor(Color.parseColor(mColors[position % 2]));
     }
 
     @NonNull
@@ -58,6 +62,7 @@ public class Guest_MeoAdapter extends FirebaseRecyclerAdapter<Meo, Guest_MeoAdap
         TextView ten,gia,maulong,tvchitiet;
         ImageView  imguri;
         CardView card;
+        LinearLayout linearLayout;
 
         public Holder(@NonNull View itemView) {
             super(itemView);
@@ -67,6 +72,7 @@ public class Guest_MeoAdapter extends FirebaseRecyclerAdapter<Meo, Guest_MeoAdap
             maulong=itemView.findViewById(R.id.tv_guest_maulong);
             imguri =itemView.findViewById(R.id.img_guest_pet);
             tvchitiet=itemView.findViewById(R.id.tv_guest_chitietpet);
+            linearLayout=itemView.findViewById(R.id.linear_guest_cho_meo);
         }
     }
 }

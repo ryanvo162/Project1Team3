@@ -1,10 +1,12 @@
 package com.ps14483.project1_team3.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,6 +22,7 @@ import com.squareup.picasso.Picasso;
 
 public class Guest_ThucAnAdapter extends FirebaseRecyclerAdapter<ThucAn, Guest_ThucAnAdapter.Holder> {
     private Context context;
+    public String[] mColors = {"#C6D8D4","#F5D0C1"};
 
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
@@ -39,6 +42,7 @@ public class Guest_ThucAnAdapter extends FirebaseRecyclerAdapter<ThucAn, Guest_T
         holder.tvchitiet.setText(thucAn.chitiet);
         String imgUri= thucAn.img+"";
         Picasso.get().load(imgUri).into(holder.imguri);
+        holder.linearLayout.setBackgroundColor(Color.parseColor(mColors[position % 2]));
     }
 
     @NonNull
@@ -57,6 +61,7 @@ public class Guest_ThucAnAdapter extends FirebaseRecyclerAdapter<ThucAn, Guest_T
         TextView ten,gia,maulong,tvchitiet;
         ImageView  imguri;
         CardView card;
+        LinearLayout linearLayout;
 
         public Holder(@NonNull View itemView) {
             super(itemView);
@@ -65,6 +70,7 @@ public class Guest_ThucAnAdapter extends FirebaseRecyclerAdapter<ThucAn, Guest_T
             gia=itemView.findViewById(R.id.tv_guest_giapsp);
             imguri =itemView.findViewById(R.id.img_guest_sp);
             tvchitiet=itemView.findViewById(R.id.tv_guest_chitietsp);
+            linearLayout=itemView.findViewById(R.id.linear_guest_sp);
         }
     }
 }
