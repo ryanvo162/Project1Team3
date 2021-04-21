@@ -9,19 +9,16 @@
     android:layout_marginRight="40dp"
     android:backgroundTint="@color/light_orange"
     android:elevation="10dp"
-    android:minHeight="150dp"
     android:orientation="vertical"
     app:cardCornerRadius="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:background="#F5D0C1"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="15dp"
-        android:layout_gravity="center"
+        android:paddingLeft="50dp"
+        android:gravity="center_vertical"
+        android:id="@+id/linear_hd"
         android:orientation="vertical">
         <TextView
             android:id="@+id/tv_tensp_hoadon"

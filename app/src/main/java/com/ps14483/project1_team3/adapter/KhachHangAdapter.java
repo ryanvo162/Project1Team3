@@ -4,12 +4,14 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +28,7 @@ import java.util.HashMap;
 
 public class KhachHangAdapter extends FirebaseRecyclerAdapter<KhachHang,KhachHangAdapter.Holder> {
     private Context context;
+    public String[] mColors = {"#C6D8D4","#F5D0C1"};
 
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
@@ -49,7 +52,7 @@ public class KhachHangAdapter extends FirebaseRecyclerAdapter<KhachHang,KhachHan
                 return false;
             }
         });
-
+        holder.linearLayout.setBackgroundColor(Color.parseColor(mColors[position % 2]));
 
     }
 
@@ -65,11 +68,13 @@ public class KhachHangAdapter extends FirebaseRecyclerAdapter<KhachHang,KhachHan
         TextView ten,sdt;
         ImageView imgedit,imgdel;
         CardView card;
+        LinearLayout linearLayout;
         public Holder(@NonNull View itemView) {
             super(itemView);
             ten=itemView.findViewById(R.id.tv_ten_kh);
             sdt=itemView.findViewById(R.id.tv_sdt);
             card=itemView.findViewById(R.id.item_kh);
+            linearLayout=itemView.findViewById(R.id.linear_kh);
         }
     }
     public void update(String ten,String sdt,int position)

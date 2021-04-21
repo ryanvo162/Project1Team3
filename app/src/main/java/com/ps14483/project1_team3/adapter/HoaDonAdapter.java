@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,8 +36,8 @@ import java.util.HashMap;
 
 public class HoaDonAdapter extends FirebaseRecyclerAdapter<Hoadon,HoaDonAdapter.Holder> {
 
-
     private Context context;
+    public String[] mColors = {"#F5D0C1","#C6D8D4"};
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
@@ -81,6 +83,7 @@ public class HoaDonAdapter extends FirebaseRecyclerAdapter<Hoadon,HoaDonAdapter.
 //
 //        });
 
+        holder.linearLayout.setBackgroundColor(Color.parseColor(mColors[position % 2]));
 
 
     }
@@ -96,6 +99,7 @@ public class HoaDonAdapter extends FirebaseRecyclerAdapter<Hoadon,HoaDonAdapter.
     {
         TextView tvloai,tvtensp,tvtenkh,tvgia,tvngay;
         ImageView imgdel;
+        LinearLayout linearLayout;
         public Holder(@NonNull View itemView) {
             super(itemView);
             tvloai=itemView.findViewById(R.id.tv_loai_hoadon);
@@ -103,6 +107,7 @@ public class HoaDonAdapter extends FirebaseRecyclerAdapter<Hoadon,HoaDonAdapter.
             tvtenkh=itemView.findViewById(R.id.tv_tenkh);
             tvgia=itemView.findViewById(R.id.tv_gia_hoadon);
             tvngay=itemView.findViewById(R.id.tvngaynua_hoadon);
+            linearLayout=itemView.findViewById(R.id.linear_hd);
 //            imgdel=itemView.findViewById(R.id.phieumuon_del);
         }
     }

@@ -4,12 +4,14 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +30,7 @@ import java.util.HashMap;
 
 public class ChoAdapter extends FirebaseRecyclerAdapter<Cho,ChoAdapter.Holder> {
     private Context context;
-
+    public String[] mColors = {"#F5D0C1","#C6D8D4"};
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
@@ -56,6 +58,7 @@ public class ChoAdapter extends FirebaseRecyclerAdapter<Cho,ChoAdapter.Holder> {
                 return false;
             }
         });
+        holder.linearLayout.setBackgroundColor(Color.parseColor(mColors[position % 2]));
 
 
     }
@@ -72,6 +75,7 @@ public class ChoAdapter extends FirebaseRecyclerAdapter<Cho,ChoAdapter.Holder> {
         TextView ten,gia,maulong,chitiet;
         ImageView imgedit,imgdel, imguri;
         CardView card;
+        LinearLayout linearLayout;
 
         public Holder(@NonNull View itemView) {
             super(itemView);
@@ -81,6 +85,7 @@ public class ChoAdapter extends FirebaseRecyclerAdapter<Cho,ChoAdapter.Holder> {
             maulong=itemView.findViewById(R.id.tv_maulong);
             chitiet=itemView.findViewById(R.id.tv_chitietpet);
             imguri =itemView.findViewById(R.id.img_pet);
+            linearLayout=itemView.findViewById(R.id.linear_meo);
         }
     }
     public void update(String ten,String maulong,String chitiet,int gia,int position)

@@ -8,13 +8,14 @@
     android:layout_marginTop="20dp"
     android:layout_marginRight="40dp"
     android:elevation="10dp"
+    android:backgroundTint="@color/light_orange"
     android:orientation="vertical"
     app:cardCornerRadius="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F5D0C1"
+        android:id="@+id/linear_meo"
         android:orientation="horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView

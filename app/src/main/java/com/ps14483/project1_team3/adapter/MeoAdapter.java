@@ -4,12 +4,14 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +29,7 @@ import java.util.HashMap;
 
 public class MeoAdapter extends FirebaseRecyclerAdapter<Meo,MeoAdapter.Holder> {
     private Context context;
+    public String[] mColors = {"#F5D0C1","#C6D8D4"};
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
@@ -54,6 +57,7 @@ public class MeoAdapter extends FirebaseRecyclerAdapter<Meo,MeoAdapter.Holder> {
                 return false;
             }
         });
+        holder.linearLayout.setBackgroundColor(Color.parseColor(mColors[position % 2]));
 
     }
 
@@ -69,6 +73,8 @@ public class MeoAdapter extends FirebaseRecyclerAdapter<Meo,MeoAdapter.Holder> {
         TextView ten,gia,maulong,chitiet;
         ImageView imgedit,imgdel,imguri;
         CardView card;
+        RecyclerView rv;
+        LinearLayout linearLayout;
         public Holder(@NonNull View itemView) {
             super(itemView);
             ten=itemView.findViewById(R.id.tv_ten_cho_meo);
@@ -78,6 +84,8 @@ public class MeoAdapter extends FirebaseRecyclerAdapter<Meo,MeoAdapter.Holder> {
             chitiet=itemView.findViewById(R.id.tv_chitietpet);
 
             card=itemView.findViewById(R.id.item_cho_meo);
+            rv=itemView.findViewById(R.id.rc_meo);
+            linearLayout=itemView.findViewById(R.id.linear_meo);
         }
     }
     public void update(String ten,String maulong,String chitiet,int gia,int position)

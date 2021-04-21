@@ -15,40 +15,43 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="15dp"
-        android:background="#F5D0C1"
+        android:layout_height="150dp"
+        android:id="@+id/linear_kh"
+        android:gravity="center"
         android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tv_ten_kh"
-            style="@style/cardViewText"
-            android:textStyle="bold"
-            android:text="Tên Kh" />
-
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <TextView
-                android:id="@+id/tvgiasp1"
-                style="@style/cardViewText"
-                android:text="SDT: "
-
-                />
+            android:paddingLeft="50dp"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_sdt"
+                android:id="@+id/tv_ten_kh"
                 style="@style/cardViewText"
-                android:text="20000"
-                android:textColor="#2962FF" />
-        </LinearLayout>
+                android:textStyle="bold"
+                android:text="Tên Kh" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/tvgiasp1"
+                    style="@style/cardViewText"
+                    android:text="SDT: "
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_sdt"
+                    style="@style/cardViewText"
+                    android:text="20000"
+                    android:textColor="#2962FF" />
+            </LinearLayout>
+    </LinearLayout>
+
 
 
     </LinearLayout>
