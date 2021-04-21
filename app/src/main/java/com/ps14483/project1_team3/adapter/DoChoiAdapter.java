@@ -5,9 +5,12 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -21,6 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.textfield.TextInputLayout;
 import com.ps14483.project1_team3.R;
 import com.ps14483.project1_team3.model.Dochoi;
 import com.squareup.picasso.Picasso;
@@ -28,7 +32,8 @@ import com.squareup.picasso.Picasso;
 import java.util.HashMap;
 
 public class DoChoiAdapter extends FirebaseRecyclerAdapter<Dochoi,DoChoiAdapter.Holder> {
-
+    EditText edten,edgia,edchitiet;
+    TextInputLayout tilten,tilgia;
     private Context context;
     public String[] mColors = {"#C6D8D4","#F5D0C1"};
     /**
@@ -88,13 +93,22 @@ public class DoChoiAdapter extends FirebaseRecyclerAdapter<Dochoi,DoChoiAdapter.
     {
         Dialog dialog=new Dialog(context);
         dialog.setContentView(R.layout.dialog_sp);
-        EditText edten=dialog.findViewById(R.id.edTen);
-        EditText edchitiet=dialog.findViewById(R.id.edchitietsp);
-        EditText edgia=dialog.findViewById(R.id.edgia);
+        dialog.getWindow().setBackgroundDrawableResource(R.drawable.bg_dialog_none);
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        dialog.getWindow().setAttributes(lp);
+        edten=dialog.findViewById(R.id.edTen);
+        edchitiet=dialog.findViewById(R.id.edchitietsp);
+        edgia=dialog.findViewById(R.id.edgia);
+        tilgia=dialog.findViewById(R.id.tilgiasp);
+        tilten=dialog.findViewById(R.id.tilTensp);
         Button btnok=dialog.findViewById(R.id.btnOK);
         Button btncancel=dialog.findViewById(R.id.btnCancel);
         ImageView img=dialog.findViewById(R.id.dialog_img_sp);
         ((ViewGroup)img.getParent()).removeView(img);
+        KiemLoiNhap();
         btncancel.setText("Delete");
         btnok.setText("Edit");
         btncancel.setOnClickListener(new View.OnClickListener() {
@@ -152,6 +166,53 @@ public class DoChoiAdapter extends FirebaseRecyclerAdapter<Dochoi,DoChoiAdapter.
     {
         getSnapshots().getSnapshot(position).getRef().removeValue();
         Toast.makeText(context, position + "", Toast.LENGTH_SHORT).show();
+
+    }
+    public void KiemLoiNhap()
+    {
+        edten.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (edten.length()==0)
+                {
+                    tilten.setError("Tên không được bỏ trống");
+                }else {
+                    tilten.setErrorEnabled(false);
+                }
+            }
+        });
+
+        edgia.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (edgia.length()<4)
+                {
+                    tilgia.setError("Giá tối thiểu là 1000");
+                }else {
+                    tilgia.setErrorEnabled(false);
+                }
+            }
+        });
 
     }
 }

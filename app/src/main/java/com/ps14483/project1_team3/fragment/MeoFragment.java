@@ -11,6 +11,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
@@ -97,6 +98,12 @@ public class MeoFragment extends Fragment {
     {
         Dialog dialog=new Dialog(context);
         dialog.setContentView(R.layout.dialog_chomeo);
+        dialog.getWindow().setBackgroundDrawableResource(R.drawable.bg_dialog_none);
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        dialog.getWindow().setAttributes(lp);
         edten=dialog.findViewById(R.id.edTenpet);
         edmaulong=dialog.findViewById(R.id.edmaulong);
         edgia=dialog.findViewById(R.id.edgiapet);

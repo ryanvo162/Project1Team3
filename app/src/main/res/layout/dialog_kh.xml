@@ -9,51 +9,36 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:fontFamily="@font/montserrat"
-        android:text="Sản Phẩm"
+        android:text="Khách Hàng"
         android:textColor="@color/black"
         android:textSize="30dp" />
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilTensp"
+        android:id="@+id/tilTenkh"
         style="@style/textInputLayout">
 
         <EditText
-            android:id="@+id/edTen"
+            android:id="@+id/edTenkh"
             style="@style/editText"
             android:hint="Tên" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
+
+
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilchitietsp"
+        android:id="@+id/tilsdt"
         style="@style/textInputLayout">
 
         <EditText
-            android:id="@+id/edchitietsp"
+            android:id="@+id/edsdt"
             style="@style/editText"
-            android:hint="Chi tiết" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilgiasp"
-        style="@style/textInputLayout">
-
-        <EditText
-            android:id="@+id/edgia"
-            style="@style/editText"
-            android:hint="Giá"
+            android:hint="SĐT"
             android:inputType="number" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <ImageView
-        android:id="@+id/dialog_img_sp"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/ic_round_calendar_today_24" />
+
+
 
 
     <LinearLayout

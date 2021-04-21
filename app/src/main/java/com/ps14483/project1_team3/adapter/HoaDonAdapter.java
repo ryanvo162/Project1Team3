@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -57,35 +58,32 @@ public class HoaDonAdapter extends FirebaseRecyclerAdapter<Hoadon,HoaDonAdapter.
         holder.tvtenkh.setText(hoadon.tenkh+"");
         holder.tvgia.setText(hoadon.giamua+"");
         holder.tvngay.setText(hoadon.ngaymua+"");
-//        holder.imgdel.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                AlertDialog.Builder b = new AlertDialog.Builder(context);
-//                b.setTitle("");
-//                b.setMessage("Bạn có muốn xóa không?");
-//                b.setPositiveButton("Có", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int id) {
-//                        Del(position);
-//                        HoaDonAdapter.this.notifyDataSetChanged();
-//                    }
-//                });
-//
-//                b.setNegativeButton("Không", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int id) {
-//                        dialog.dismiss();
-//                    }
-//                });
-//
-//                AlertDialog al = b.create();
-//
-//                al.show();
-//            }
-//
-//        });
+        holder.card.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                AlertDialog.Builder b = new AlertDialog.Builder(context);
+                b.setTitle("");
+                b.setMessage("Bạn có muốn xóa không?");
+                b.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Del(position);
+                        HoaDonAdapter.this.notifyDataSetChanged();
+                    }
+                });
 
+                b.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+
+                AlertDialog al = b.create();
+
+                al.show();
+                return false;
+            }
+        });
         holder.linearLayout.setBackgroundColor(Color.parseColor(mColors[position % 2]));
-
-
     }
 
     @NonNull
@@ -100,6 +98,7 @@ public class HoaDonAdapter extends FirebaseRecyclerAdapter<Hoadon,HoaDonAdapter.
         TextView tvloai,tvtensp,tvtenkh,tvgia,tvngay;
         ImageView imgdel;
         LinearLayout linearLayout;
+        CardView card;
         public Holder(@NonNull View itemView) {
             super(itemView);
             tvloai=itemView.findViewById(R.id.tv_loai_hoadon);
@@ -108,6 +107,7 @@ public class HoaDonAdapter extends FirebaseRecyclerAdapter<Hoadon,HoaDonAdapter.
             tvgia=itemView.findViewById(R.id.tv_gia_hoadon);
             tvngay=itemView.findViewById(R.id.tvngaynua_hoadon);
             linearLayout=itemView.findViewById(R.id.linear_hd);
+            card=itemView.findViewById(R.id.item_hoadon);
 //            imgdel=itemView.findViewById(R.id.phieumuon_del);
         }
     }

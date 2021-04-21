@@ -104,6 +104,7 @@ public class ChoFragment extends Fragment {
         Dialog dialog=new Dialog(context);
         dialog.setContentView(R.layout.dialog_chomeo);
 
+        dialog.getWindow().setBackgroundDrawableResource(R.drawable.bg_dialog_none);
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
         lp.copyFrom(dialog.getWindow().getAttributes());
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
@@ -207,6 +208,7 @@ public class ChoFragment extends Fragment {
                 {
                     tilten.setError("Tên không được bỏ trống");
                 }else {
+                    tilten.setErrorEnabled(false);
                 }
             }
         });
@@ -227,6 +229,7 @@ public class ChoFragment extends Fragment {
                 {
                     tilmaulong.setError("Màu lông không được bỏ trống");
                 }else {
+                    tilmaulong.setErrorEnabled(false);
                 }
             }
         });

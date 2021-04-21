@@ -11,6 +11,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
@@ -95,6 +96,12 @@ public class ThucAnFragment extends Fragment {
     public void openDialog(Context context, int type) {
         Dialog dialog = new Dialog(context);
         dialog.setContentView(R.layout.dialog_sp);
+        dialog.getWindow().setBackgroundDrawableResource(R.drawable.bg_dialog_none);
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        dialog.getWindow().setAttributes(lp);
         edten = dialog.findViewById(R.id.edTen);
         edgia = dialog.findViewById(R.id.edgia);
         btnok = dialog.findViewById(R.id.btnOK);

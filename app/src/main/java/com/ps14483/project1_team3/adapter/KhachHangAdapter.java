@@ -5,9 +5,12 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -21,6 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.textfield.TextInputLayout;
 import com.ps14483.project1_team3.R;
 import com.ps14483.project1_team3.model.KhachHang;
 
@@ -28,6 +32,8 @@ import java.util.HashMap;
 
 public class KhachHangAdapter extends FirebaseRecyclerAdapter<KhachHang,KhachHangAdapter.Holder> {
     private Context context;
+    EditText edten,edsdt;
+    TextInputLayout tilten,tilsdt;
     public String[] mColors = {"#C6D8D4","#F5D0C1"};
 
     /**
@@ -80,13 +86,18 @@ public class KhachHangAdapter extends FirebaseRecyclerAdapter<KhachHang,KhachHan
     public void update(String ten,String sdt,int position)
     {
         Dialog dialog=new Dialog(context);
-        dialog.setContentView(R.layout.dialog_sp);
-        EditText edten=dialog.findViewById(R.id.edTen);
-        ImageView imageView=dialog.findViewById(R.id.dialog_img_sp);
-        ((ViewGroup)imageView.getParent()).removeView(imageView);
-        EditText edchitiet=dialog.findViewById(R.id.edchitietsp);
-        ((ViewGroup)edchitiet.getParent()).removeView(edchitiet);
-        EditText edsdt=dialog.findViewById(R.id.edgia);
+        dialog.setContentView(R.layout.dialog_kh);
+        dialog.getWindow().setBackgroundDrawableResource(R.drawable.bg_dialog_none);
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        dialog.getWindow().setAttributes(lp);
+        edten=dialog.findViewById(R.id.edTenkh);
+        edsdt=dialog.findViewById(R.id.edsdt);
+        tilten=dialog.findViewById(R.id.tilTenkh);
+        tilsdt=dialog.findViewById(R.id.tilsdt);
+        KiemLoiNhap();
         Button btnok=dialog.findViewById(R.id.btnOK);
         Button btncancel=dialog.findViewById(R.id.btnCancel);
         btncancel.setText("Delete");
@@ -137,6 +148,54 @@ public class KhachHangAdapter extends FirebaseRecyclerAdapter<KhachHang,KhachHan
     {
         getSnapshots().getSnapshot(position).getRef().removeValue();
         Toast.makeText(context, position + "", Toast.LENGTH_SHORT).show();
+
+    }
+    public void KiemLoiNhap()
+    {
+
+        edten.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (edten.length()==0)
+                {
+                    tilten.setError("Tên không được bỏ trống");
+                }else {
+                    tilten.setErrorEnabled(false);
+                }
+            }
+        });
+
+        edsdt.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (edsdt.length()<10)
+                {
+                    tilsdt.setError("Số điện thoại cần 10 số");
+                }else {
+                    tilsdt.setErrorEnabled(false);
+                }
+            }
+        });
 
     }
 }

@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -102,6 +103,12 @@ public class HoaDonFragment extends Fragment {
     {
         Dialog dialog= new Dialog(context);
         dialog.setContentView(R.layout.dialog_hoadon);
+        dialog.getWindow().setBackgroundDrawableResource(R.drawable.bg_dialog_none);
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        dialog.getWindow().setAttributes(lp);
         sploaisp=dialog.findViewById(R.id.spinner_loaisp);
         sptensp=dialog.findViewById(R.id.spinner_tensp);
         sptenkh=dialog.findViewById(R.id.spinner_kh);

@@ -8,6 +8,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -83,19 +84,17 @@ public class KhachHangFragment extends Fragment {
     public void openDialog(Context context,int type)
     {
         Dialog dialog=new Dialog(context);
-        dialog.setContentView(R.layout.dialog_sp);
-        edten=dialog.findViewById(R.id.edTen);
-        edsdt=dialog.findViewById(R.id.edgia);
-        tilten=dialog.findViewById(R.id.tilTensp);
-        tilsdt=dialog.findViewById(R.id.tilgiasp);
-        edsdt.setHint("SĐT");
-        EditText edchitiet=dialog.findViewById(R.id.edchitietsp);
-        TextInputLayout tilchitiet=dialog.findViewById(R.id.tilchitietsp);
-        ((ViewGroup)tilchitiet.getParent()).removeView(tilchitiet);
-
-        ((ViewGroup)edchitiet.getParent()).removeView(edchitiet);
-        ImageView imageView=dialog.findViewById(R.id.dialog_img_sp);
-        ((ViewGroup)imageView.getParent()).removeView(imageView);
+        dialog.setContentView(R.layout.dialog_kh);
+        dialog.getWindow().setBackgroundDrawableResource(R.drawable.bg_dialog_none);
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        dialog.getWindow().setAttributes(lp);
+        edten=dialog.findViewById(R.id.edTenkh);
+        edsdt=dialog.findViewById(R.id.edsdt);
+        tilten=dialog.findViewById(R.id.tilTenkh);
+        tilsdt=dialog.findViewById(R.id.tilsdt);
         Button btnok=dialog.findViewById(R.id.btnOK);
         Button btncancel=dialog.findViewById(R.id.btnCancel);
         btnok.setText("ADD");

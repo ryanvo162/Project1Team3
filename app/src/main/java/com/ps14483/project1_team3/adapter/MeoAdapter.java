@@ -5,9 +5,12 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -21,6 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.textfield.TextInputLayout;
 import com.ps14483.project1_team3.R;
 import com.ps14483.project1_team3.model.Meo;
 import com.squareup.picasso.Picasso;
@@ -29,6 +33,8 @@ import java.util.HashMap;
 
 public class MeoAdapter extends FirebaseRecyclerAdapter<Meo,MeoAdapter.Holder> {
     private Context context;
+    EditText edten,edgia,edmaulong,edchitiet;
+    TextInputLayout tilten,tilgia,tilmaulong;
     public String[] mColors = {"#F5D0C1","#C6D8D4"};
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
@@ -92,14 +98,23 @@ public class MeoAdapter extends FirebaseRecyclerAdapter<Meo,MeoAdapter.Holder> {
     {
         Dialog dialog=new Dialog(context);
         dialog.setContentView(R.layout.dialog_chomeo);
-        EditText edten=dialog.findViewById(R.id.edTenpet);
-        EditText edmaulong=dialog.findViewById(R.id.edmaulong);
-        EditText edgia=dialog.findViewById(R.id.edgiapet);
+        dialog.getWindow().setBackgroundDrawableResource(R.drawable.bg_dialog_none);
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        dialog.getWindow().setAttributes(lp);
+        edten=dialog.findViewById(R.id.edTenpet);
+        edmaulong=dialog.findViewById(R.id.edmaulong);
+        edgia=dialog.findViewById(R.id.edgiapet);
         Button btnok=dialog.findViewById(R.id.btnOKpet);
-        EditText edchitiet=dialog.findViewById(R.id.edchitiet);
+        edchitiet=dialog.findViewById(R.id.edchitiet);
+        tilten=dialog.findViewById(R.id.tilTenpet);
+        tilmaulong=dialog.findViewById(R.id.tilmaulong);
+        tilgia=dialog.findViewById(R.id.tilgiapet);
+        KiemLoiNhap();
         Button btncancel=dialog.findViewById(R.id.btnCancelpet);
         ImageView img=dialog.findViewById(R.id.dialog_img_pet);
-
         ((ViewGroup)img.getParent()).removeView(img);
         btnok.setText("Edit");
         btncancel.setText("Delete");
@@ -155,6 +170,73 @@ public class MeoAdapter extends FirebaseRecyclerAdapter<Meo,MeoAdapter.Holder> {
     {
         getSnapshots().getSnapshot(position).getRef().removeValue();
         Toast.makeText(context, position + "", Toast.LENGTH_SHORT).show();
+
+    }
+    public void KiemLoiNhap()
+    {
+        edten.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (edten.length()==0)
+                {
+                    tilten.setError("Tên không được bỏ trống");
+                }else {
+                    tilten.setErrorEnabled(false);
+                }
+            }
+        });
+        edmaulong.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (edmaulong.length()==0)
+                {
+                    tilmaulong.setError("Màu lông không được bỏ trống");
+                }else {
+                    tilmaulong.setErrorEnabled(false);
+                }
+            }
+        });
+        edgia.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (edgia.length()<4)
+                {
+                    tilgia.setError("Giá tối thiểu là 1000");
+                }else {
+                    tilgia.setErrorEnabled(false);
+                }
+            }
+        });
 
     }
 }
