@@ -54,12 +54,12 @@ public class HoaDonFragment extends Fragment {
     FloatingActionButton flb;
     Spinner sploaisp,sptensp,sptenkh;
     Button btnok,btncancel;
-    ArrayList<String> arrayList=new ArrayList<>();
+    ArrayList<String> arraylistTenLoai =new ArrayList<>();
     ArrayList<String> tensp1=new ArrayList<>();
     ArrayList<String>kh=new ArrayList<>();
     ArrayList<String> gia1=new ArrayList<>();
-    String gia;
-
+    String[] tenloai={"Chó","Mèo","Thực phẩm","Phụ kiện"};
+    String gia,tenLoai;
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -117,6 +117,7 @@ public class HoaDonFragment extends Fragment {
         ImageView imgngay=dialog.findViewById(R.id.ivngay);
         btnok=dialog.findViewById(R.id.pm_btnOK_hoadon);
         btncancel=dialog.findViewById(R.id.pm_btnCancel_hoadon);
+        addloai();
         btncancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -139,7 +140,7 @@ public class HoaDonFragment extends Fragment {
 
 
                 String id=reference.child("HoaDon").push().getKey();
-                String loaisp=arrayList.get(sploaisp.getSelectedItemPosition());
+                String loaisp=tenLoai;
                 String tensp= tensp1.get(sptensp.getSelectedItemPosition());
                 String kh1=kh.get(sptenkh.getSelectedItemPosition());
                 String ngay1=tvNgay.getText().toString();
@@ -161,21 +162,39 @@ public class HoaDonFragment extends Fragment {
     }
     public void showloaispSpinner()
     {
-        reference.child("sanpham").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                arrayList.clear();
-                for (DataSnapshot item: snapshot.getChildren())
-                {
-                    arrayList.add(item.getKey());
-                }
-                ArrayAdapter<String>adapter=new ArrayAdapter<>(mContext,R.layout.spinner_item,arrayList);
+
+                ArrayAdapter<String>adapter=new ArrayAdapter<>(mContext,R.layout.spinner_item, arraylistTenLoai);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 sploaisp.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
                 sploaisp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        String selected=parent.getItemAtPosition(position).toString();
+                        String selectedItem=null;
+                        switch (position)
+                        {
+                            case 0:{
+                                selectedItem="Cho";
+                                break;
+                            }
+
+                            case 1:{
+                                selectedItem="Meo";
+                                break;
+                            }
+                            case 2:{
+                                selectedItem="ThucAn";
+                                break;
+                            }
+                            case 3:{
+                                selectedItem="DoChoi";
+                                break;
+                            }
+                            default:break;
+                        }
+                        tenLoai= arraylistTenLoai.get(position);
+
+                        String selected=selectedItem;
                         reference.child("sanpham").child(selected).addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -185,10 +204,9 @@ public class HoaDonFragment extends Fragment {
                                 {
                                     tensp1.add(item.child("ten").getValue(String.class));
                                     gia1.add(item.child("key").getValue().toString());
-
                                 }
                                 ArrayAdapter<String>adapter=new ArrayAdapter<>(mContext,R.layout.spinner_item,tensp1);
-
+                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                                 sptensp.setAdapter(adapter);
                                 adapter.notifyDataSetChanged();
                                 sptensp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -233,13 +251,10 @@ public class HoaDonFragment extends Fragment {
                     }
                 });
 
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        });
+
+
     }
 
     public void showkhSpinner()
@@ -253,6 +268,7 @@ public class HoaDonFragment extends Fragment {
                     kh.add(item.child("ten").getValue(String.class));
                 }
                 ArrayAdapter<String>adapter=new ArrayAdapter<>(mContext,R.layout.spinner_item,kh);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 sptenkh.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
 
@@ -281,5 +297,13 @@ public class HoaDonFragment extends Fragment {
         },YEAR,MONTH,DATE);
         datePickerDialog.show();
 
+    }
+    public void addloai()
+    {
+        arraylistTenLoai.clear();
+        arraylistTenLoai.add("Chó");
+        arraylistTenLoai.add("Mèo");
+        arraylistTenLoai.add("Thực phẩm");
+        arraylistTenLoai.add("Phụ kiện");
     }
 }
