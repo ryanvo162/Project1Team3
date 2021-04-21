@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -54,6 +55,8 @@ public class GuestActivity extends AppCompatActivity {
         drawer.addDrawerListener(bdtoggle);
         bdtoggle.syncState();
         fragmentManager.beginTransaction().add(R.id.guest_frame_layout, new GuestScreenFragment()).commit();
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
     }
 
     @Override
@@ -89,14 +92,24 @@ public class GuestActivity extends AppCompatActivity {
 
     public void onClickThuCung(View view) {
         toolbar.setTitle("Thú Cưng");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.show();
         fragmentManager.beginTransaction().replace(R.id.guest_frame_layout, new Guest_PetFragment()).commit();
         drawer.closeDrawer(GravityCompat.START);
     }
 
     public void onClickSp(View view) {
         toolbar.setTitle("Sản Phẩm");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.show();
         fragmentManager.beginTransaction().replace(R.id.guest_frame_layout, new Guest_SanPhamFragment()).commit();
         drawer.closeDrawer(GravityCompat.START);
+    }
+    public void getStarted(View view) {
+        toolbar.setTitle("Thú Cưng");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.show();
+        fragmentManager.beginTransaction().replace(R.id.guest_frame_layout, new Guest_PetFragment()).commit();
     }
 
     public void Thoat(View view) {
