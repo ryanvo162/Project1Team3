@@ -110,7 +110,12 @@ public class HoaDonFragment extends Fragment {
         ImageView imgngay=dialog.findViewById(R.id.ivngay);
         btnok=dialog.findViewById(R.id.pm_btnOK_hoadon);
         btncancel=dialog.findViewById(R.id.pm_btnCancel_hoadon);
-
+        btncancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
         imgngay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
