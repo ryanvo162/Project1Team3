@@ -291,7 +291,7 @@ public class HoaDonFragment extends Fragment {
         DatePickerDialog datePickerDialog = new DatePickerDialog(mContext, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dateofMonth) {
-                String date=year+"-"+(month+1)+"-"+dateofMonth;
+                String date=year+"/"+(month+1)+"/"+dateofMonth;
                 tvNgay.setText(date);
             }
         },YEAR,MONTH,DATE);
