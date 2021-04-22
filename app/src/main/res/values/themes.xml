@@ -81,4 +81,5 @@
         <item name="android:layout_gravity">bottom|right</item>
         <item name="android:src">@drawable/ic_search</item>
     </style>
+
 </resources>

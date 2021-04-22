@@ -14,13 +14,14 @@
     app:cardCornerRadius="20dp">
 
     <LinearLayout
+        android:id="@+id/linear_hd"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="#F5D0C1"
-        android:paddingLeft="50dp"
         android:gravity="center_vertical"
-        android:id="@+id/linear_hd"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingLeft="50dp">
+
         <TextView
             android:id="@+id/tv_tensp_hoadon"
             style="@style/cardViewText"
@@ -28,10 +29,12 @@
             android:text="Tên Thành Viên"
 
             android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/tvNgay1"
                 style="@style/cardViewText"
@@ -41,29 +44,32 @@
                 android:id="@+id/tvngaynua_hoadon"
                 style="@style/cardViewText"
                 android:text="20/10/2020"
-                android:textColor="#2962FF"/>
+                android:textColor="#2962FF" />
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-        <TextView
-            android:id="@+id/tv_loai1"
-            style="@style/cardViewText"
-            android:text="Loại Sản Phẩm: " />
-
-        <TextView
-            android:id="@+id/tv_loai_hoadon"
-            style="@style/cardViewText"
-            android:text="Tên Sách "
-            android:textColor="#2962FF" />
-        </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_loai1"
+                style="@style/cardViewText"
+                android:text="Loại Sản Phẩm: " />
+
+            <TextView
+                android:id="@+id/tv_loai_hoadon"
+                style="@style/cardViewText"
+                android:text="Tên Sách "
+                android:textColor="#2962FF" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/tv_tienThue1"
                 style="@style/cardViewText"
@@ -73,12 +79,14 @@
                 android:id="@+id/tv_gia_hoadon"
                 style="@style/cardViewText"
                 android:text="Tiền "
-                android:textColor="#2962FF"/>
+                android:textColor="#2962FF" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/tv_tentt1"
                 style="@style/cardViewText"
@@ -92,7 +100,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 
 </androidx.cardview.widget.CardView>
