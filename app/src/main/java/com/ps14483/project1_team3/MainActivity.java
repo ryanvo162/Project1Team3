@@ -111,7 +111,6 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.show();
         fragmentManager.beginTransaction().replace(R.id.frame_layout, new PetFragment()).commit();
-        Toast.makeText(getApplicationContext(), "alo", Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);
 
     }
@@ -120,7 +119,6 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         fragmentManager.beginTransaction().replace(R.id.frame_layout, new TaiKhoanFragment()).commit();
-        Toast.makeText(getApplicationContext(), "alo", Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);
 
     }
@@ -130,7 +128,6 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.show();
         fragmentManager.beginTransaction().replace(R.id.frame_layout, new SanPhamFragment()).commit();
-        Toast.makeText(getApplicationContext(), "alo", Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);
 
     }
@@ -140,7 +137,6 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.show();
         fragmentManager.beginTransaction().replace(R.id.frame_layout, new HoaDonFragment()).commit();
-        Toast.makeText(getApplicationContext(), "alo", Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);
 
     }
@@ -150,7 +146,6 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.show();
         fragmentManager.beginTransaction().replace(R.id.frame_layout, new KhachHangFragment()).commit();
-        Toast.makeText(getApplicationContext(), "alo", Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);
 
     }
