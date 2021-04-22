@@ -25,6 +25,7 @@ import com.ps14483.project1_team3.model.Cho;
 import java.util.ArrayList;
 
 public class Guest_ChoFragment extends Fragment {
+
     RecyclerView rcv;
     Guest_ChoAdapter adapter;
     FirebaseDatabase database= FirebaseDatabase.getInstance();
@@ -33,10 +34,7 @@ public class Guest_ChoFragment extends Fragment {
     StorageReference storage= FirebaseStorage.getInstance().getReference();
     FloatingActionButton flb;
 
-
     ArrayList<String> list=new ArrayList<String>();
-
-
 
     @Nullable
     @Override
