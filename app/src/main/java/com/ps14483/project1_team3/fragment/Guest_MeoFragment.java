@@ -41,7 +41,7 @@ public class Guest_MeoFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.fragment_meo, container, false);
+        View view= inflater.inflate(R.layout.fragment_guest_meo, container, false);
         rcv=view.findViewById(R.id.rc_meo);
         rcv.setLayoutManager(new LinearLayoutManager(getActivity()));
         FirebaseRecyclerOptions<Meo> options=new FirebaseRecyclerOptions.Builder<Meo>()

@@ -41,7 +41,7 @@ public class Guest_ThucAnFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.fragment_thucan, container, false);
+        View view= inflater.inflate(R.layout.fragment_guest_thucan, container, false);
         rcv=view.findViewById(R.id.rc_thucan);
         rcv.setLayoutManager(new LinearLayoutManager(getActivity()));
         FirebaseRecyclerOptions<ThucAn> options=new FirebaseRecyclerOptions.Builder<ThucAn>()

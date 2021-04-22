@@ -39,7 +39,7 @@ public class Guest_ChoFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.fragment_cho, container, false);
+        View view= inflater.inflate(R.layout.fragment_guest_cho, container, false);
         rcv=view.findViewById(R.id.rc_cho);
         rcv.setLayoutManager(new LinearLayoutManager(getActivity()));
         FirebaseRecyclerOptions<Cho> options=new FirebaseRecyclerOptions.Builder<Cho>()

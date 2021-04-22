@@ -41,7 +41,7 @@ public class Guest_DoChoiFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.fragment_dochoi, container, false);
+        View view= inflater.inflate(R.layout.fragment_guest_dochoi, container, false);
         rcv=view.findViewById(R.id.rc_dochoi);
         rcv.setLayoutManager(new LinearLayoutManager(getActivity()));
         FirebaseRecyclerOptions<Dochoi> options=new FirebaseRecyclerOptions.Builder<Dochoi>()
