@@ -127,7 +127,8 @@
                 android:paddingBottom="20dp"
                 android:text="Sản Phẩm"
                 android:textAllCaps="false"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:layout_marginBottom="5dp"/>
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
