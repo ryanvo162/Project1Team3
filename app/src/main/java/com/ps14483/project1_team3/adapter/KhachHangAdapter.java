@@ -133,13 +133,17 @@ public class KhachHangAdapter extends FirebaseRecyclerAdapter<KhachHang,KhachHan
         btnok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String ten=edten.getText().toString();
-                String sdt=edsdt.getText().toString();
-                HashMap hashMap = new HashMap();
-                hashMap.put("ten",ten);
-                hashMap.put("sdt",sdt);
-                getSnapshots().getSnapshot(position).getRef().updateChildren(hashMap);
-                dialog.dismiss();
+                String ten = edten.getText().toString();
+                String sdt = edsdt.getText().toString();
+                if (ten.length() < 0 ||  sdt.length() != 10) {
+                    Toast.makeText(context, "Bạn chưa đáp ứng đủ yêu cầu", Toast.LENGTH_SHORT).show();
+                } else {
+                    HashMap hashMap = new HashMap();
+                    hashMap.put("ten", ten);
+                    hashMap.put("sdt", sdt);
+                    getSnapshots().getSnapshot(position).getRef().updateChildren(hashMap);
+                    dialog.dismiss();
+                }
             }
         });
         dialog.show();

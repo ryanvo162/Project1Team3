@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -114,8 +115,8 @@ public class MeoAdapter extends FirebaseRecyclerAdapter<Meo,MeoAdapter.Holder> {
         tilgia=dialog.findViewById(R.id.tilgiapet);
         KiemLoiNhap();
         Button btncancel=dialog.findViewById(R.id.btnCancelpet);
-        ImageView img=dialog.findViewById(R.id.dialog_img_pet);
-        ((ViewGroup)img.getParent()).removeView(img);
+        RelativeLayout relativeLayout=dialog.findViewById(R.id.phan_chon_hinh_pet);
+        ((ViewGroup)relativeLayout.getParent()).removeView(relativeLayout);
         btnok.setText("Edit");
         btncancel.setText("Delete");
         btncancel.setOnClickListener(new View.OnClickListener() {
@@ -151,17 +152,22 @@ public class MeoAdapter extends FirebaseRecyclerAdapter<Meo,MeoAdapter.Holder> {
         btnok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String ten=edten.getText().toString();
-                String maulong=edmaulong.getText().toString();
-                String chitiet=edchitiet.getText().toString();
-                int gia=Integer.parseInt(edgia.getText().toString());
-                HashMap hashMap = new HashMap();
-                hashMap.put("ten",ten);
-                hashMap.put("maulong",maulong);
-                hashMap.put("gia",gia);
-                hashMap.put("chitiet",chitiet);
-                getSnapshots().getSnapshot(position).getRef().updateChildren(hashMap);
-                dialog.dismiss();
+                String ten = edten.getText().toString();
+                String maulong = edmaulong.getText().toString();
+                String gia1 = edgia.getText().toString();
+                String chitiet = edchitiet.getText().toString();
+                if (ten.length() < 0 || maulong.length() < 0 || gia1.length() < 4) {
+                    Toast.makeText(context, "Bạn chưa đáp ứng đủ yêu cầu", Toast.LENGTH_SHORT).show();
+                } else {
+                    int gia = Integer.parseInt(gia1);
+                    HashMap hashMap = new HashMap();
+                    hashMap.put("ten", ten);
+                    hashMap.put("maulong", maulong);
+                    hashMap.put("gia", gia);
+                    hashMap.put("chitiet", chitiet);
+                    getSnapshots().getSnapshot(position).getRef().updateChildren(hashMap);
+                    dialog.dismiss();
+                }
             }
         });
         dialog.show();

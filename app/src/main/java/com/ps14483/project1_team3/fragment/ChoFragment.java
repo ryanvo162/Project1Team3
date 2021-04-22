@@ -57,8 +57,8 @@ public class ChoFragment extends Fragment {
     TextInputLayout tilten, tilmaulong, tilgia;
     EditText edten, edmaulong, edgia, edchitiet;
     FloatingActionButton flb;
-    Button btnok, btncancel;
-    Uri uriI;
+    Button btnok, btncancel,btnchonhinh;
+    Uri uriI,sourceimg;
     String imgURL;
 
     ArrayList<String> list = new ArrayList<String>();
@@ -116,13 +116,22 @@ public class ChoFragment extends Fragment {
         tilten = dialog.findViewById(R.id.tilTenpet);
         tilmaulong = dialog.findViewById(R.id.tilmaulong);
         img = dialog.findViewById(R.id.dialog_img_pet);
-        img.setOnClickListener(new View.OnClickListener() {
+        btnchonhinh=dialog.findViewById(R.id.btnchonhinh);
+        btnchonhinh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 chooseImg();
-                Picasso.get().load(uriI).into(img);
+                img.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        img.setImageURI(uriI);
+                    }
+                });
+
             }
         });
+
+
 
         btncancel = dialog.findViewById(R.id.btnCancelpet);
 //Kiểm lỗi nhập
@@ -144,30 +153,40 @@ public class ChoFragment extends Fragment {
                     String tenpet = edten.getText().toString();
                     String maulongpet = edmaulong.getText().toString();
                     String chitiet = edchitiet.getText().toString();
-                    int gia = Integer.parseInt(edgia.getText().toString());
+                    String gia1 = edgia.getText().toString();
                     // Thêm hình
-                    StorageReference storageReference = storage.child(System.currentTimeMillis() + "." + getFileExtension(uriI));
-                    storageReference.putFile(uriI).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                @Override
-                                public void onSuccess(Uri uri) {
-                                    imgURL = uri.toString();
-                                    DatabaseReference newref = spref.child("Cho");
-                                    Cho cho = new Cho(id, tenpet, maulongpet, gia, imgURL, chitiet);
-                                    newref.child(id).setValue(cho).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-                                            Toast.makeText(getContext(), "Thành Công", Toast.LENGTH_SHORT).show();
-                                            dialog.dismiss();
+                    try {
+                        StorageReference storageReference = storage.child(System.currentTimeMillis() + "." + getFileExtension(uriI));
+                        storageReference.putFile(uriI).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                            @Override
+                            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+                                        Toast.makeText(getContext(),"Xin chờ chút",Toast.LENGTH_SHORT).show();
+                                        imgURL = uri.toString();
+                                        if (id.length()<0 || tenpet.length()<0 || maulongpet.length()<0 || gia1.length() < 4 || imgURL == null) {
+                                            Toast.makeText(getContext(), "Bạn chưa đáp ứng đủ yêu cầu", Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            int gia = Integer.parseInt(gia1);
+                                            DatabaseReference newref = spref.child("Cho");
+                                            Cho cho = new Cho(id, tenpet, maulongpet, gia, imgURL, chitiet);
+                                            newref.child(id).setValue(cho).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    Toast.makeText(getContext(), "Thành Công", Toast.LENGTH_SHORT).show();
+                                                    dialog.dismiss();
+                                                }
+                                            });
                                         }
-                                    });
-                                }
-                            });
-                            Toast.makeText(getContext(), imgURL, Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                                    }
+                                });
+                            }
+                        });
+                    }catch (NullPointerException e)
+                    {
+                        Toast.makeText(getContext(),"Chưa chọn hình",Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
             //
@@ -261,14 +280,15 @@ public class ChoFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 2 && resultCode == RESULT_OK && data != null) {
             uriI = data.getData();
-
         }
     }
 
     private String getFileExtension(Uri mUri) {
-        ContentResolver cr = getContext().getContentResolver();
-        MimeTypeMap mime = MimeTypeMap.getSingleton();
-        return mime.getExtensionFromMimeType(cr.getType(mUri));
+
+            ContentResolver cr = getContext().getContentResolver();
+            MimeTypeMap mime = MimeTypeMap.getSingleton();
+            return mime.getExtensionFromMimeType(cr.getType(mUri));
+
     }
 
 }

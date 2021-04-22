@@ -121,14 +121,18 @@ public class KhachHangFragment extends Fragment {
                             tilsdt.setError("SĐT bị trùng!");
                             return;
                         }else {
-                            KhachHang khachHang = new KhachHang(id,tenkh,sdt);
-                            spref.child(id).setValue(khachHang).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    Toast.makeText(getContext(), "Thành Công", Toast.LENGTH_SHORT).show();
-                                    dialog.dismiss();
-                                }
-                            });
+                            if (tenkh.length() < 0 ||  sdt.length() != 10) {
+                                Toast.makeText(context, "Bạn chưa đáp ứng đủ yêu cầu", Toast.LENGTH_SHORT).show();
+                            } else {
+                                KhachHang khachHang = new KhachHang(id,tenkh,sdt);
+                                spref.child(id).setValue(khachHang).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        Toast.makeText(getContext(), "Thành Công", Toast.LENGTH_SHORT).show();
+                                        dialog.dismiss();
+                                    }
+                                });
+                            }
                         }
                     }
 

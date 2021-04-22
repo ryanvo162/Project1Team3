@@ -46,14 +46,34 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <ImageView
-        android:id="@+id/dialog_img_sp"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/ic_round_calendar_today_24" />
+        android:id="@+id/phan_chon_hinh_sp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        >
+
+        <Button
+            android:id="@+id/btnchonhinhsp"
+            style="@style/buttonApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:paddingHorizontal="16dp"
+            android:text="Chọn hình" />
+
+        <ImageView
+            android:id="@+id/dialog_img_sp"
+            android:layout_width="181dp"
+            android:layout_height="80dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="45dp"
+
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@id/btnchonhinhsp"
+            android:src="@drawable/ic_round_calendar_today_24" />
+    </RelativeLayout>
+
 
 
     <LinearLayout

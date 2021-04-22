@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -43,15 +45,18 @@ public class LoginActivity extends AppCompatActivity {
         // Firebase user
         database=FirebaseDatabase.getInstance();
         reference=database.getReference("PetShop").child("user");
-
+        KiemLoiNhap();
 //      Login
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String username = edUserName.getText().toString().trim();
                 String password = edPassword.getText().toString().trim();
-
-                KiemLoiNhap(username,password);
+                if (edUserName.length()==0)
+                {
+                    tilUser.setError("Username không được để trống");
+                    return;
+                }else {
                 reference.child(username).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -69,8 +74,12 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(i);
                                 finish();
                             }else {
-                                tilPass.setError("Sai Mật Khẩu!");
-                                return;
+                                if (password.length()==0)
+                                {
+                                    tilPass.setError("Password không được để trống");
+                                }else {
+                                    tilPass.setError("Sai Mật Khẩu!");
+                                }
                             }
                         }catch (Exception e) {
                             tilUser.setError("Sai Tài Khoản");
@@ -83,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     }
                 });
-            }
+            }}
         });
 
         btnGuest.setOnClickListener(new View.OnClickListener() {
@@ -95,18 +104,50 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-    public void KiemLoiNhap(String username,String password) {
-        if (username.length() == 0){
-            tilUser.setError("Username không được để trống");
-            return;
-        }else {
-            tilUser.setErrorEnabled(false);
-        }
-        if(password.length() == 0){
-            tilPass.setError("Password không được để trống");
-            return;
-        }else {
-            tilPass.setErrorEnabled(false);
-        }
+    public void KiemLoiNhap() {
+
+        edUserName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (edUserName.length() == 0){
+                    tilUser.setError("Username không được để trống");
+                    return;
+                }else {
+                    tilUser.setErrorEnabled(false);
+                }
+            }
+        });
+
+        edPassword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (edPassword.length() == 0){
+                    tilPass.setError("Password không được để trống");
+                    return;
+                }else {
+                    tilPass.setErrorEnabled(false);
+                }
+            }
+        });
     }
 }

@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -106,8 +107,8 @@ public class ThucAnAdapter extends FirebaseRecyclerAdapter<ThucAn,ThucAnAdapter.
         KiemLoiNhap();
         Button btnok=dialog.findViewById(R.id.btnOK);
         Button btncancel=dialog.findViewById(R.id.btnCancel);
-        ImageView imageView=dialog.findViewById(R.id.dialog_img_sp);
-        ((ViewGroup)imageView.getParent()).removeView(imageView);
+        RelativeLayout relativeLayout=dialog.findViewById(R.id.phan_chon_hinh_sp);
+        ((ViewGroup)relativeLayout.getParent()).removeView(relativeLayout);
         btncancel.setText("Delete");
         btnok.setText("Edit");
         btncancel.setOnClickListener(new View.OnClickListener() {
@@ -122,15 +123,20 @@ public class ThucAnAdapter extends FirebaseRecyclerAdapter<ThucAn,ThucAnAdapter.
         btnok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String ten=edten.getText().toString();
-                int gia=Integer.parseInt(edgia.getText().toString());
-                String chitiet=edchitiet.getText().toString();
-                HashMap hashMap = new HashMap();
-                hashMap.put("ten",ten);
-                hashMap.put("gia",gia);
-                hashMap.put("chitiet",chitiet);
-                getSnapshots().getSnapshot(position).getRef().updateChildren(hashMap);
-                dialog.dismiss();
+                String ten = edten.getText().toString();
+                String gia1 = edgia.getText().toString();
+                String chitiet = edchitiet.getText().toString();
+                if (ten.length() < 0 ||  gia1.length() < 4) {
+                    Toast.makeText(context, "Bạn chưa đáp ứng đủ yêu cầu", Toast.LENGTH_SHORT).show();
+                } else {
+                    int gia = Integer.parseInt(gia1);
+                    HashMap hashMap = new HashMap();
+                    hashMap.put("ten", ten);
+                    hashMap.put("gia", gia);
+                    hashMap.put("chitiet", chitiet);
+                    getSnapshots().getSnapshot(position).getRef().updateChildren(hashMap);
+                    dialog.dismiss();
+                }
             }
         });
         btncancel.setOnClickListener(new View.OnClickListener() {

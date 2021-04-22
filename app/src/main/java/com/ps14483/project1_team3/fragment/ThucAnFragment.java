@@ -55,7 +55,7 @@ public class ThucAnFragment extends Fragment {
     FloatingActionButton flb;
     ArrayList<String> list = new ArrayList<String>();
     EditText edten,edgia,edchitiet;
-    Button btnok,btncancel;
+    Button btnok,btncancel,btnchonhinh;
     Uri uri;
     String imgURL;
     ImageView img;
@@ -113,11 +113,18 @@ public class ThucAnFragment extends Fragment {
         edgia.setHint("Giá");
 
         img=dialog.findViewById(R.id.dialog_img_sp);
-        img.setOnClickListener(new View.OnClickListener() {
+        btnchonhinh=dialog.findViewById(R.id.btnchonhinhsp);
+        btnchonhinh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 chooseImg();
-                Picasso.get().load(uri).into(img);
+                img.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        img.setImageURI(uri);
+                    }
+                });
+
             }
         });
         btncancel.setOnClickListener(new View.OnClickListener() {
@@ -133,7 +140,8 @@ public class ThucAnFragment extends Fragment {
                 String  id=spref.child("ThucAn").push().getKey();
                 String ten = edten.getText().toString();
                 String chitiet=edchitiet.getText().toString();
-                int gia = Integer.parseInt(edgia.getText().toString());
+                String gia1 = edgia.getText().toString();
+                try {
                 StorageReference storageReference = storage.child(System.currentTimeMillis() + "." + getFileExtension(uri));
                 storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -142,24 +150,30 @@ public class ThucAnFragment extends Fragment {
                             @Override
                             public void onSuccess(Uri uri) {
                                 imgURL = uri.toString();
-                                DatabaseReference newref = spref.child("ThucAn");
-                                Dochoi item = new Dochoi(id,ten, gia,imgURL,chitiet);
-                                newref.child(id).setValue(item).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        Toast.makeText(getContext(), "Thành Công", Toast.LENGTH_SHORT).show();
-                                        dialog.dismiss();
-                                    }
-                                });
+                                if (id.length()<0 || ten.length()<0 || gia1.length() < 4 || imgURL.length()<0) {
+                                    Toast.makeText(getContext(), "Bạn chưa đáp ứng đủ yêu cầu", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    int gia = Integer.parseInt(gia1);
+                                    DatabaseReference newref = spref.child("ThucAn");
+                                    Dochoi item = new Dochoi(id, ten, gia, imgURL, chitiet);
+                                    Toast.makeText(getContext(),"Xin chờ chút",Toast.LENGTH_SHORT).show();
+                                    newref.child(id).setValue(item).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            Toast.makeText(getContext(), "Thành Công", Toast.LENGTH_SHORT).show();
+                                            dialog.dismiss();
+                                        }
+                                    });
+                                }
                             }
-
-
                         });
                         Toast.makeText(getContext(), imgURL, Toast.LENGTH_SHORT).show();
-
                     }
                 });
-
+                }catch (NullPointerException e)
+                {
+                    Toast.makeText(getContext(),"Chưa chọn hình",Toast.LENGTH_SHORT).show();
+                }
             }
         });
         dialog.show();
