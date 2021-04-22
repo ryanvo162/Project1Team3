@@ -81,13 +81,13 @@
 
         <Button
             android:id="@+id/btnLogin"
-            style="@style/buttonApp"
+            style="@style/buttonLogin"
             android:layout_marginEnd="25dp"
             android:text="Login" />
 
         <Button
             android:id="@+id/btnGuest"
-            style="@style/buttonApp"
+            style="@style/buttonLogin"
             android:layout_marginEnd="0dp"
             android:text="Guest" />
     </LinearLayout>

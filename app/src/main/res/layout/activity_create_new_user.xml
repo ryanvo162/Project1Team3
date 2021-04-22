@@ -110,7 +110,7 @@
 
     <Button
         android:id="@+id/btnCreateUser"
-        style="@style/buttonApp"
+        style="@style/buttonLogin"
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
         android:text="Create"/>
