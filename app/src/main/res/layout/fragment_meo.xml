@@ -24,5 +24,11 @@
         app:layout_anchorGravity="bottom|right|end"
         app:maxImageSize="50dp" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/flbFind"
+        style="@style/fabFind"
+        app:backgroundTint="@color/fab"
+        app:fabCustomSize="50dp"
+        app:maxImageSize="20dp" />
 
 </FrameLayout>
