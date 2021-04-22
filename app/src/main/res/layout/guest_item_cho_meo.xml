@@ -8,15 +8,15 @@
     android:layout_marginTop="20dp"
     android:layout_marginRight="40dp"
     android:layout_marginBottom="20dp"
+    android:backgroundTint="@color/light_orange"
     android:elevation="10dp"
     android:orientation="vertical"
     app:cardCornerRadius="20dp">
 
     <LinearLayout
+        android:id="@+id/linear_guest_cho_meo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F5D0C1"
-        android:id="@+id/linear_guest_cho_meo"
         android:orientation="horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -33,36 +33,48 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tv_guest_tenpet"
                 style="@style/cardViewText"
-                android:text="Tên Pet"
+                android:layout_marginBottom="3dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Tên Thú Cưng"
+                android:textColor="@color/black_app"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/tvgiapet1"
                     style="@style/cardViewText"
-                    android:text="Giá: " />
+                    android:text="Giá: "
+                    android:textColor="@color/black_app"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
 
                 <TextView
                     android:id="@+id/tv_guest_giapet"
                     style="@style/cardViewText"
-                    android:textColor="#2962FF"
-                    android:text="20000" />
+                    android:text="20000"
+                    android:textColor="@color/black_app"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -73,8 +85,7 @@
                 <TextView
                     android:id="@+id/tv_guest_maulong"
                     style="@style/cardViewText"
-                    android:textColor="#2962FF"
-                    android:text="Màu lông " />
+                    android:text="Tam thể" />
             </LinearLayout>
 
             <LinearLayout
@@ -87,10 +98,9 @@
                     android:text="Chi tiết: " />
 
                 <TextView
-                    android:text="Chi tiết"
-                    android:textColor="#2962FF"
                     android:id="@+id/tv_guest_chitietpet"
-                    style="@style/cardViewText" />
+                    style="@style/cardViewText"
+                    android:text="Ha ha ha" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
