@@ -55,8 +55,8 @@ public class GuestActivity extends AppCompatActivity {
         drawer.addDrawerListener(bdtoggle);
         bdtoggle.syncState();
         fragmentManager.beginTransaction().add(R.id.guest_frame_layout, new GuestScreenFragment()).commit();
-//        ActionBar actionBar = getSupportActionBar();
-//        actionBar.hide();
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
     }
 
     @Override
