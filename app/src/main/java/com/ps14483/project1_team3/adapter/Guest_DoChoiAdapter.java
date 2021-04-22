@@ -21,7 +21,7 @@ import com.squareup.picasso.Picasso;
 
 public class Guest_DoChoiAdapter extends FirebaseRecyclerAdapter<Dochoi, Guest_DoChoiAdapter.Holder> {
     private Context context;
-    public String[] mColors = {"#C6D8D4","#F5D0C1"};
+    public String[] mColors = {"#F5D0C1","#C6D8D4"};
 
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See

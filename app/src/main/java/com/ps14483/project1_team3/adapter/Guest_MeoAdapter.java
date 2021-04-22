@@ -22,7 +22,7 @@ import com.squareup.picasso.Picasso;
 
 public class Guest_MeoAdapter extends FirebaseRecyclerAdapter<Meo, Guest_MeoAdapter.Holder> {
     private Context context;
-    public String[] mColors = {"#F5D0C1","#C6D8D4"};
+    public String[] mColors = {"#C6D8D4","#F5D0C1"};
 
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See

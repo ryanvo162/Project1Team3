@@ -35,7 +35,7 @@ public class MeoAdapter extends FirebaseRecyclerAdapter<Meo,MeoAdapter.Holder> {
     private Context context;
     EditText edten,edgia,edmaulong,edchitiet;
     TextInputLayout tilten,tilgia,tilmaulong;
-    public String[] mColors = {"#F5D0C1","#C6D8D4"};
+    public String[] mColors = {"#C6D8D4","#F5D0C1"};
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
