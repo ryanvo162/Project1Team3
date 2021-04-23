@@ -149,8 +149,6 @@ public class KhachHangAdapter extends FirebaseRecyclerAdapter<KhachHang,KhachHan
     public void Del(int position)
     {
         getSnapshots().getSnapshot(position).getRef().removeValue();
-        Toast.makeText(context, position + "", Toast.LENGTH_SHORT).show();
-
     }
     public void KiemLoiNhap()
     {

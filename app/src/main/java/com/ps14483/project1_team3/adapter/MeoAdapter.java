@@ -175,8 +175,6 @@ public class MeoAdapter extends FirebaseRecyclerAdapter<Meo,MeoAdapter.Holder> {
     public void Del(int position)
     {
         getSnapshots().getSnapshot(position).getRef().removeValue();
-        Toast.makeText(context, position + "", Toast.LENGTH_SHORT).show();
-
     }
     public void KiemLoiNhap()
     {
