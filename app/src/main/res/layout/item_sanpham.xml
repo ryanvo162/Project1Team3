@@ -69,10 +69,11 @@
 
                 <TextView
                     style="@style/cardViewText"
-                    android:text=" VND "
+                    android:text=" VND"
                     android:textColor="@color/black_app"
                     android:textSize="12sp"
                     android:textStyle="bold" />
+
             </LinearLayout>
 
             <TextView

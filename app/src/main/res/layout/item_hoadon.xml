@@ -83,7 +83,7 @@
 
             <TextView
                 style="@style/cardViewText"
-                android:text=" VND "
+                android:text=" VND"
                 android:textSize="12sp" />
         </LinearLayout>
 
