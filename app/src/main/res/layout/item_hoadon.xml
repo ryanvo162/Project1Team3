@@ -17,17 +17,17 @@
         android:id="@+id/linear_hd"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="#F5D0C1"
         android:gravity="center_vertical"
         android:orientation="vertical"
-        android:paddingLeft="50dp">
+        android:paddingLeft="60dp">
 
         <TextView
             android:id="@+id/tv_tensp_hoadon"
             style="@style/cardViewText"
-
-            android:text="Tên Thành Viên"
-
+            android:fontFamily="@font/montserrat"
+            android:text="Tên Sản Phẩm"
+            android:textColor="@color/black_app"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -38,13 +38,13 @@
             <TextView
                 android:id="@+id/tvNgay1"
                 style="@style/cardViewText"
+                android:textColor="@color/black_app"
                 android:text="Ngày Mua: " />
 
             <TextView
                 android:id="@+id/tvngaynua_hoadon"
                 style="@style/cardViewText"
-                android:text="20/10/2020"
-                android:textColor="#2962FF" />
+                android:text="20/10/2020"/>
         </LinearLayout>
 
         <LinearLayout
@@ -55,13 +55,13 @@
             <TextView
                 android:id="@+id/tv_loai1"
                 style="@style/cardViewText"
+                android:textColor="@color/black_app"
                 android:text="Loại Sản Phẩm: " />
 
             <TextView
                 android:id="@+id/tv_loai_hoadon"
                 style="@style/cardViewText"
-                android:text="Tên Sách "
-                android:textColor="#2962FF" />
+                android:text="Tên Sách " />
         </LinearLayout>
 
 
@@ -73,13 +73,13 @@
             <TextView
                 android:id="@+id/tv_tienThue1"
                 style="@style/cardViewText"
+                android:textColor="@color/black_app"
                 android:text="Tiền: " />
 
             <TextView
                 android:id="@+id/tv_gia_hoadon"
                 style="@style/cardViewText"
-                android:text="Tiền "
-                android:textColor="#2962FF" />
+                android:text="31000" />
         </LinearLayout>
 
         <LinearLayout
@@ -90,13 +90,13 @@
             <TextView
                 android:id="@+id/tv_tentt1"
                 style="@style/cardViewText"
-                android:text="Tên người mua: " />
+                android:textColor="@color/black_app"
+                android:text="Người mua: " />
 
             <TextView
                 android:id="@+id/tv_tenkh"
                 style="@style/cardViewText"
-                android:text="Tên Khách Hàng: "
-                android:textColor="#2962FF" />
+                android:text="Ryan Võ" />
         </LinearLayout>
 
     </LinearLayout>
