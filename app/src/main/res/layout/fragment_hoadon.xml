@@ -28,6 +28,9 @@
         android:id="@+id/flbFind"
         style="@style/fabFind"
         app:backgroundTint="@color/fab"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="45dp"
+        android:layout_marginLeft="120dp"
         app:fabCustomSize="50dp"
         app:maxImageSize="20dp" />
 
