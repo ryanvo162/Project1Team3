@@ -62,11 +62,17 @@
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
-
                 <TextView
                     android:id="@+id/tv_guest_giapet"
                     style="@style/cardViewText"
                     android:text="20000"
+                    android:textColor="@color/black_app"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/cardViewText"
+                    android:text=" VND "
                     android:textColor="@color/black_app"
                     android:textSize="12sp"
                     android:textStyle="bold" />

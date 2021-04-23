@@ -80,6 +80,11 @@
                 android:id="@+id/tv_gia_hoadon"
                 style="@style/cardViewText"
                 android:text="31000" />
+
+            <TextView
+                style="@style/cardViewText"
+                android:text=" VND "
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
