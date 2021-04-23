@@ -44,7 +44,7 @@
                 android:fontFamily="@font/montserrat"
                 android:text="Tên Thú Cưng"
                 android:textColor="@color/black_app"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <LinearLayout
