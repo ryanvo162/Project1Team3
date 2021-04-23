@@ -51,7 +51,7 @@ public class Guest_MeoAdapter extends FirebaseRecyclerAdapter<Meo, Guest_MeoAdap
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.guest_item_cho_meo,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_guest_cho_meo,parent,false);
         return new Holder(view);
 
 

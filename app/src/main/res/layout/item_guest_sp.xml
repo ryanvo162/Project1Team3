@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/guest_item_cho_meo"
+    android:id="@+id/guest_item_sp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="40dp"
     android:layout_marginTop="20dp"
     android:layout_marginRight="40dp"
     android:layout_marginBottom="20dp"
-    android:backgroundTint="@color/light_orange"
     android:elevation="10dp"
     android:orientation="vertical"
     app:cardCornerRadius="20dp">
 
     <LinearLayout
-        android:id="@+id/linear_guest_cho_meo"
+        android:id="@+id/linear_guest_sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#F5D0C1"
+        android:padding="15dp"
         android:orientation="horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/img_guest_pet"
+            android:id="@+id/img_guest_sp"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
             android:src="@drawable/hinhden" />
 
         <LinearLayout
@@ -38,11 +36,11 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_guest_tenpet"
+                android:id="@+id/tv_guest_tensp"
                 style="@style/cardViewText"
                 android:layout_marginBottom="3dp"
                 android:fontFamily="@font/montserrat"
-                android:text="Tên Thú Cưng"
+                android:text="Tên Sản Phẩm"
                 android:textColor="@color/black_app"
                 android:textSize="18dp"
                 android:textStyle="bold" />
@@ -63,29 +61,12 @@
 
 
                 <TextView
-                    android:id="@+id/tv_guest_giapet"
+                    android:id="@+id/tv_guest_giapsp"
                     style="@style/cardViewText"
                     android:text="20000"
                     android:textColor="@color/black_app"
                     android:textSize="12sp"
                     android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_maulong1"
-                    style="@style/cardViewText"
-                    android:text="Màu lông: " />
-
-                <TextView
-                    android:id="@+id/tv_guest_maulong"
-                    style="@style/cardViewText"
-                    android:text="Tam thể" />
             </LinearLayout>
 
             <LinearLayout
@@ -98,7 +79,7 @@
                     android:text="Chi tiết: " />
 
                 <TextView
-                    android:id="@+id/tv_guest_chitietpet"
+                    android:id="@+id/tv_guest_chitietsp"
                     style="@style/cardViewText"
                     android:text="Ha ha ha" />
             </LinearLayout>

@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -52,7 +51,7 @@ public class Guest_ChoAdapter extends FirebaseRecyclerAdapter<Cho, Guest_ChoAdap
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.guest_item_cho_meo,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_guest_cho_meo,parent,false);
         return new Holder(view);
 
     }

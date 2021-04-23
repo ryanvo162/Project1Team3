@@ -48,7 +48,7 @@ public class Guest_DoChoiAdapter extends FirebaseRecyclerAdapter<Dochoi, Guest_D
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.guest_item_sp,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_guest_sp,parent,false);
         return new Holder(view);
 
     }
