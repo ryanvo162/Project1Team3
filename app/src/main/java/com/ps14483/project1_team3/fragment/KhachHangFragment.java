@@ -121,7 +121,7 @@ public class KhachHangFragment extends Fragment {
                             tilsdt.setError("SĐT bị trùng!");
                             return;
                         }else {
-                            if (tenkh.length() < 0 ||  sdt.length() != 10) {
+                            if (tenkh.length() == 0 ||  sdt.length() != 10) {
                                 Toast.makeText(context, "Bạn chưa đáp ứng đủ yêu cầu", Toast.LENGTH_SHORT).show();
                             } else {
                                 KhachHang khachHang = new KhachHang(id,tenkh,sdt);
