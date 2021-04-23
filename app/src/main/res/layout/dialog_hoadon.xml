@@ -89,7 +89,7 @@
             android:layout_gravity="center"
             style="@style/editText"
             android:layout_weight="0.8"
-            android:text="2021/1/1" />
+            android:text="1/1/2021" />
 
         <ImageView
             android:id="@+id/ivngay"
