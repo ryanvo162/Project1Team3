@@ -155,7 +155,7 @@ public class MeoFragment extends Fragment {
                             @Override
                             public void onSuccess(Uri uri) {
                                 imgURL = uri.toString();
-                                if (id.length()<0 || tenpet.length()<0 || maulongpet.length()<0 || gia1.length() < 4 || imgURL == null) {
+                                if (id.length()==0 || tenpet.length()==0 || maulongpet.length()==0 || gia1.length() < 4 || imgURL == null) {
                                     Toast.makeText(getContext(), "Bạn chưa đáp ứng đủ yêu cầu", Toast.LENGTH_SHORT).show();
                                 } else {
                                     int gia=Integer.parseInt(gia1);

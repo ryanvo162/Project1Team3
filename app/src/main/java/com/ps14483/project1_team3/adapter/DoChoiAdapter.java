@@ -128,7 +128,7 @@ public class DoChoiAdapter extends FirebaseRecyclerAdapter<Dochoi,DoChoiAdapter.
 
                 String gia1 = edgia.getText().toString();
                 String chitiet = edchitiet.getText().toString();
-                if (ten.length() < 0 || gia1.length() < 4) {
+                if (ten.length()==0 || gia1.length() < 4) {
                     Toast.makeText(context, "Bạn chưa đáp ứng đủ yêu cầu", Toast.LENGTH_SHORT).show();
                 } else {
                     int gia = Integer.parseInt(gia1);

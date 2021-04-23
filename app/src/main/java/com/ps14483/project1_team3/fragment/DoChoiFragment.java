@@ -151,7 +151,7 @@ public class DoChoiFragment extends Fragment {
                             public void onSuccess(Uri uri) {
                                 imgURL = uri.toString();
                                 DatabaseReference newref = spref.child("DoChoi");
-                                if (id.length()<0 || ten.length()<0 || gia1.length() < 4 || imgURL.length()<0) {
+                                if (id.length()==0 || ten.length()==0 || gia1.length() < 4) {
                                     Toast.makeText(getContext(), "Bạn chưa đáp ứng đủ yêu cầu", Toast.LENGTH_SHORT).show();
                                 } else {
                                     int gia = Integer.parseInt(gia1);

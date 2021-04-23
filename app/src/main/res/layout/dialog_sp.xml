@@ -48,7 +48,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/phan_chon_hinh_sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
         <Button
             android:id="@+id/btnchonhinhsp"
             style="@style/buttonApp"
-            android:layout_gravity="center"
+            android:layout_marginVertical="22dp"
             android:layout_marginLeft="10dp"
             android:text="Chọn hình" />
 
@@ -66,9 +66,9 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginLeft="55dp"
-            android:layout_toRightOf="@id/btnchonhinh"
+            android:layout_toRightOf="@id/btnchonhinhsp"
             android:src="@drawable/ic_baseline_image" />
-    </LinearLayout>
+    </RelativeLayout>
 
 
     <LinearLayout

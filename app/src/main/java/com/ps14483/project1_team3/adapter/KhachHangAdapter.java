@@ -121,11 +121,9 @@ public class KhachHangAdapter extends FirebaseRecyclerAdapter<KhachHang,KhachHan
                         dialog.dismiss();
                     }
                 });
-
                 AlertDialog al = b.create();
-
                 al.show();
-
+                dialog.dismiss();
             }
         });
         edten.setText(ten);
@@ -135,7 +133,7 @@ public class KhachHangAdapter extends FirebaseRecyclerAdapter<KhachHang,KhachHan
             public void onClick(View v) {
                 String ten = edten.getText().toString();
                 String sdt = edsdt.getText().toString();
-                if (ten.length() < 0 ||  sdt.length() != 10) {
+                if (ten.length() == 0 ||  sdt.length() != 10) {
                     Toast.makeText(context, "Bạn chưa đáp ứng đủ yêu cầu", Toast.LENGTH_SHORT).show();
                 } else {
                     HashMap hashMap = new HashMap();

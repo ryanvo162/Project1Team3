@@ -165,7 +165,7 @@ public class ChoFragment extends Fragment {
                                     public void onSuccess(Uri uri) {
                                         Toast.makeText(getContext(),"Xin chờ chút",Toast.LENGTH_SHORT).show();
                                         imgURL = uri.toString();
-                                        if (id.length()<0 || tenpet.length()<0 || maulongpet.length()<0 || gia1.length() < 4 || imgURL == null) {
+                                        if (id.length()==0 || tenpet.length()==0 || maulongpet.length()==0 || gia1.length() < 4 ) {
                                             Toast.makeText(getContext(), "Bạn chưa đáp ứng đủ yêu cầu", Toast.LENGTH_SHORT).show();
                                         } else {
                                             int gia = Integer.parseInt(gia1);
