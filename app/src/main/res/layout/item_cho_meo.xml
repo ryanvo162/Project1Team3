@@ -17,8 +17,11 @@
         android:id="@+id/linear_meo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingStart="15dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="15dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_pet"
@@ -68,40 +71,35 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tv_maulong1"
-                    style="@style/cardViewText"
-                    android:text="Màu lông: " />
+            <TextView
+                android:id="@+id/tv_maulong1"
+                style="@style/cardViewText"
+                android:layout_marginBottom="2dp"
+                android:textColor="@color/black_app"
+                android:text="Màu lông: " />
 
-                <TextView
-                    android:id="@+id/tv_maulong"
-                    style="@style/cardViewText"
-                    android:text="Tam thể" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_maulong"
+                style="@style/cardViewText"
+                android:layout_marginBottom="2dp"
+                android:text="Tam thể" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tv_chitiet1"
-                    style="@style/cardViewText"
-                    android:text="Chi tiết: " />
+            <TextView
+                android:id="@+id/tv_chitiet1"
+                style="@style/cardViewText"
+                android:textColor="@color/black_app"
+                android:layout_marginBottom="2dp"
+                android:text="Chi tiết: " />
 
-                <TextView
-                    android:id="@+id/tv_chitietpet"
-                    style="@style/cardViewText"
-                    android:text="Ha ha ha" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_chitietpet"
+                style="@style/cardViewText"
+                android:layout_marginBottom="2dp"
+                android:text="Ha ha ha" />
+
         </LinearLayout>
-
 
     </LinearLayout>
 

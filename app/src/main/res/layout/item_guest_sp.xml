@@ -8,6 +8,7 @@
     android:layout_marginTop="20dp"
     android:layout_marginRight="40dp"
     android:layout_marginBottom="20dp"
+    android:backgroundTint="@color/light_orange"
     android:elevation="10dp"
     android:orientation="vertical"
     app:cardCornerRadius="20dp">
@@ -16,9 +17,11 @@
         android:id="@+id/linear_guest_sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F5D0C1"
-        android:padding="15dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingStart="15dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="15dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_guest_sp"
@@ -69,20 +72,17 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
-                <TextView
-                    style="@style/cardViewText"
-                    android:text="Chi tiết: " />
+            <TextView
+                style="@style/cardViewText"
+                android:text="Chi tiết: "
+                android:textColor="@color/black_app" />
 
-                <TextView
-                    android:id="@+id/tv_guest_chitietsp"
-                    style="@style/cardViewText"
-                    android:text="Ha ha ha" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_guest_chitietsp"
+                style="@style/cardViewText"
+                android:text="Ha ha ha" />
+
         </LinearLayout>
     </LinearLayout>
 
