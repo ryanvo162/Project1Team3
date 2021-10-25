@@ -268,7 +268,6 @@ public class MeoFragment extends Fragment {
         if (requestCode==2&&resultCode == RESULT_OK&&data!=null)
         {
             uri =data.getData();
-
         }
     }
 
