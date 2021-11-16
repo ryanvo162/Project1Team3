@@ -1,3 +1,3 @@
-# Project1Team3
+# Paw & Coat
 
-Welcome to Paw & Coat
+
